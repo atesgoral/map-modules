@@ -1,8 +1,16 @@
 {
   "name": "map-modules",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Expanded ASN.1 modules for Mobile Application Part (MAP) (3GPP TS 29.002) in JSON format",
-  "keywords": [ "ss7", "tcap", "map", "asn.1", "3gpp", "29.002", "json" ],
+  "keywords": [
+    "ss7",
+    "tcap",
+    "map",
+    "asn.1",
+    "3gpp",
+    "29.002",
+    "json"
+  ],
   "main": "convert.js",
   "dependencies": {},
   "devDependencies": {
