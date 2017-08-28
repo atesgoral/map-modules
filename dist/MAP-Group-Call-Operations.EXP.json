@@ -1,0 +1,968 @@
+{
+  "prepareGroupCall": {
+    "argument": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "teleservice",
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1..5))"
+        },
+        {
+          "name": "asciCallReference",
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1..8))"
+        },
+        {
+          "name": "codec-Info",
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(5..10))"
+        },
+        {
+          "name": "cipheringAlgorithm",
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1))"
+        },
+        {
+          "name": "groupKeyNumber-Vk-Id",
+          "tag": 0,
+          "implicit": true,
+          "type": "INTEGER",
+          "qualifiers": "(0..15)",
+          "optional": true
+        },
+        {
+          "name": "groupKey",
+          "tag": 1,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(8))",
+          "optional": true
+        },
+        {
+          "name": "priority",
+          "tag": 2,
+          "implicit": true,
+          "type": "INTEGER",
+          "qualifiers": "(0..15)",
+          "optional": true
+        },
+        {
+          "name": "uplinkFree",
+          "tag": 3,
+          "implicit": true,
+          "type": "NULL",
+          "optional": true
+        },
+        {
+          "name": "extensionContainer",
+          "tag": 4,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "length": 111,
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "vstk",
+          "tag": 5,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(16))",
+          "optional": true
+        },
+        {
+          "name": "vstk-rand",
+          "tag": 6,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(5))",
+          "optional": true
+        },
+        {
+          "name": "talkerChannelParameter",
+          "tag": 7,
+          "implicit": true,
+          "type": "NULL",
+          "optional": true
+        },
+        {
+          "name": "uplinkReplyIndicator",
+          "tag": 8,
+          "implicit": true,
+          "type": "NULL",
+          "optional": true
+        }
+      ]
+    },
+    "result": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "groupCallNumber",
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1..9))"
+        },
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "length": 111,
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 39
+  },
+  "sendGroupCallEndSignal": {
+    "argument": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "imsi",
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(3..8))",
+          "optional": true
+        },
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "length": 111,
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "talkerPriority",
+          "tag": 0,
+          "implicit": true,
+          "type": "ENUMERATED",
+          "values": [
+            {
+              "name": "normal",
+              "value": 0
+            },
+            {
+              "name": "privileged",
+              "value": 1
+            },
+            {
+              "name": "emergency",
+              "value": 2
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "additionalInfo",
+          "tag": 1,
+          "implicit": true,
+          "type": "BIT STRING",
+          "qualifiers": "(SIZE(1..136))",
+          "optional": true
+        }
+      ]
+    },
+    "result": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "length": 111,
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 40
+  },
+  "processGroupCallSignalling": {
+    "argument": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "uplinkRequest",
+          "tag": 0,
+          "implicit": true,
+          "type": "NULL",
+          "optional": true
+        },
+        {
+          "name": "uplinkReleaseIndication",
+          "tag": 1,
+          "implicit": true,
+          "type": "NULL",
+          "optional": true
+        },
+        {
+          "name": "releaseGroupCall",
+          "tag": 2,
+          "implicit": true,
+          "type": "NULL",
+          "optional": true
+        },
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "length": 111,
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "talkerPriority",
+          "tag": 3,
+          "implicit": true,
+          "type": "ENUMERATED",
+          "values": [
+            {
+              "name": "normal",
+              "value": 0
+            },
+            {
+              "name": "privileged",
+              "value": 1
+            },
+            {
+              "name": "emergency",
+              "value": 2
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "additionalInfo",
+          "tag": 4,
+          "implicit": true,
+          "type": "BIT STRING",
+          "qualifiers": "(SIZE(1..136))",
+          "optional": true
+        },
+        {
+          "name": "emergencyModeResetCommandFlag",
+          "tag": 5,
+          "implicit": true,
+          "type": "NULL",
+          "optional": true
+        },
+        {
+          "name": "an-APDU",
+          "tag": 6,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "accessNetworkProtocolId",
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "ts3G-48006",
+                  "value": 1
+                },
+                {
+                  "name": "ts3G-25413",
+                  "value": 2
+                }
+              ]
+            },
+            {
+              "name": "signalInfo",
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1..2560))"
+            },
+            {
+              "name": "extensionContainer",
+              "type": "SEQUENCE",
+              "elements": [
+                {
+                  "name": "privateExtensionList",
+                  "tag": 0,
+                  "implicit": true,
+                  "type": "SEQUENCE",
+                  "qualifiers": "(SIZE(1..10))",
+                  "ofElement": {
+                    "type": "SEQUENCE",
+                    "length": 111,
+                    "elements": [
+                      {
+                        "name": "extId",
+                        "type": "MAP-EXTENSION",
+                        "qualifiers": ".&extensionId({,...})"
+                      },
+                      {
+                        "name": "extType",
+                        "type": "MAP-EXTENSION",
+                        "qualifiers": ".&ExtensionType({,...}{@extId})",
+                        "optional": true
+                      }
+                    ]
+                  },
+                  "optional": true
+                },
+                {
+                  "name": "pcs-Extensions",
+                  "tag": 1,
+                  "implicit": true,
+                  "type": "SEQUENCE",
+                  "elements": [],
+                  "optional": true
+                }
+              ],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "result": null,
+    "code": 41
+  },
+  "forwardGroupCallSignalling": {
+    "argument": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "imsi",
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(3..8))",
+          "optional": true
+        },
+        {
+          "name": "uplinkRequestAck",
+          "tag": 0,
+          "implicit": true,
+          "type": "NULL",
+          "optional": true
+        },
+        {
+          "name": "uplinkReleaseIndication",
+          "tag": 1,
+          "implicit": true,
+          "type": "NULL",
+          "optional": true
+        },
+        {
+          "name": "uplinkRejectCommand",
+          "tag": 2,
+          "implicit": true,
+          "type": "NULL",
+          "optional": true
+        },
+        {
+          "name": "uplinkSeizedCommand",
+          "tag": 3,
+          "implicit": true,
+          "type": "NULL",
+          "optional": true
+        },
+        {
+          "name": "uplinkReleaseCommand",
+          "tag": 4,
+          "implicit": true,
+          "type": "NULL",
+          "optional": true
+        },
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "length": 111,
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "stateAttributes",
+          "tag": 5,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "downlinkAttached",
+              "tag": 5,
+              "implicit": true,
+              "type": "NULL",
+              "optional": true
+            },
+            {
+              "name": "uplinkAttached",
+              "tag": 6,
+              "implicit": true,
+              "type": "NULL",
+              "optional": true
+            },
+            {
+              "name": "dualCommunication",
+              "tag": 7,
+              "implicit": true,
+              "type": "NULL",
+              "optional": true
+            },
+            {
+              "name": "callOriginator",
+              "tag": 8,
+              "implicit": true,
+              "type": "NULL",
+              "optional": true
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "talkerPriority",
+          "tag": 6,
+          "implicit": true,
+          "type": "ENUMERATED",
+          "values": [
+            {
+              "name": "normal",
+              "value": 0
+            },
+            {
+              "name": "privileged",
+              "value": 1
+            },
+            {
+              "name": "emergency",
+              "value": 2
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "additionalInfo",
+          "tag": 7,
+          "implicit": true,
+          "type": "BIT STRING",
+          "qualifiers": "(SIZE(1..136))",
+          "optional": true
+        },
+        {
+          "name": "emergencyModeResetCommandFlag",
+          "tag": 8,
+          "implicit": true,
+          "type": "NULL",
+          "optional": true
+        },
+        {
+          "name": "sm-RP-UI",
+          "tag": 9,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1..200))",
+          "optional": true
+        },
+        {
+          "name": "an-APDU",
+          "tag": 10,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "accessNetworkProtocolId",
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "ts3G-48006",
+                  "value": 1
+                },
+                {
+                  "name": "ts3G-25413",
+                  "value": 2
+                }
+              ]
+            },
+            {
+              "name": "signalInfo",
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1..2560))"
+            },
+            {
+              "name": "extensionContainer",
+              "type": "SEQUENCE",
+              "elements": [
+                {
+                  "name": "privateExtensionList",
+                  "tag": 0,
+                  "implicit": true,
+                  "type": "SEQUENCE",
+                  "qualifiers": "(SIZE(1..10))",
+                  "ofElement": {
+                    "type": "SEQUENCE",
+                    "length": 111,
+                    "elements": [
+                      {
+                        "name": "extId",
+                        "type": "MAP-EXTENSION",
+                        "qualifiers": ".&extensionId({,...})"
+                      },
+                      {
+                        "name": "extType",
+                        "type": "MAP-EXTENSION",
+                        "qualifiers": ".&ExtensionType({,...}{@extId})",
+                        "optional": true
+                      }
+                    ]
+                  },
+                  "optional": true
+                },
+                {
+                  "name": "pcs-Extensions",
+                  "tag": 1,
+                  "implicit": true,
+                  "type": "SEQUENCE",
+                  "elements": [],
+                  "optional": true
+                }
+              ],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "result": null,
+    "code": 42
+  },
+  "sendGroupCallInfo": {
+    "argument": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "requestedInfo",
+          "type": "ENUMERATED",
+          "values": [
+            {
+              "name": "anchorMSC-AddressAndASCI-CallReference",
+              "value": 0
+            },
+            {
+              "name": "imsiAndAdditionalInfoAndAdditionalSubscription",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "name": "groupId",
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(4))"
+        },
+        {
+          "name": "teleservice",
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1..5))"
+        },
+        {
+          "name": "cellId",
+          "tag": 0,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(5..7))",
+          "optional": true
+        },
+        {
+          "name": "imsi",
+          "tag": 1,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(3..8))",
+          "optional": true
+        },
+        {
+          "name": "tmsi",
+          "tag": 2,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1..4))",
+          "optional": true
+        },
+        {
+          "name": "additionalInfo",
+          "tag": 3,
+          "implicit": true,
+          "type": "BIT STRING",
+          "qualifiers": "(SIZE(1..136))",
+          "optional": true
+        },
+        {
+          "name": "talkerPriority",
+          "tag": 4,
+          "implicit": true,
+          "type": "ENUMERATED",
+          "values": [
+            {
+              "name": "normal",
+              "value": 0
+            },
+            {
+              "name": "privileged",
+              "value": 1
+            },
+            {
+              "name": "emergency",
+              "value": 2
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "cksn",
+          "tag": 5,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1))",
+          "optional": true
+        },
+        {
+          "name": "extensionContainer",
+          "tag": 6,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "length": 111,
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "result": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "anchorMSC-Address",
+          "tag": 0,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1..9))",
+          "optional": true
+        },
+        {
+          "name": "asciCallReference",
+          "tag": 1,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1..8))",
+          "optional": true
+        },
+        {
+          "name": "imsi",
+          "tag": 2,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(3..8))",
+          "optional": true
+        },
+        {
+          "name": "additionalInfo",
+          "tag": 3,
+          "implicit": true,
+          "type": "BIT STRING",
+          "qualifiers": "(SIZE(1..136))",
+          "optional": true
+        },
+        {
+          "name": "additionalSubscriptions",
+          "tag": 4,
+          "implicit": true,
+          "type": "BIT STRING",
+          "qualifiers": "(SIZE(3..8))",
+          "values": [
+            {
+              "name": "privilegedUplinkRequest",
+              "value": 0
+            },
+            {
+              "name": "emergencyUplinkRequest",
+              "value": 1
+            },
+            {
+              "name": "emergencyReset",
+              "value": 2
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "kc",
+          "tag": 5,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(8))",
+          "optional": true
+        },
+        {
+          "name": "extensionContainer",
+          "tag": 6,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "length": 111,
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 84
+  }
+}

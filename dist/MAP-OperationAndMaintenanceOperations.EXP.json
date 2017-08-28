@@ -1,0 +1,1978 @@
+{
+  "activateTraceMode": {
+    "argument": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "imsi",
+          "tag": 0,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(3..8))",
+          "optional": true
+        },
+        {
+          "name": "traceReference",
+          "tag": 1,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1..2))"
+        },
+        {
+          "name": "traceType",
+          "tag": 2,
+          "implicit": true,
+          "type": "INTEGER",
+          "qualifiers": "(0..255)"
+        },
+        {
+          "name": "omc-Id",
+          "tag": 3,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1..20))",
+          "optional": true
+        },
+        {
+          "name": "extensionContainer",
+          "tag": 4,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "length": 111,
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "traceReference2",
+          "tag": 5,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(3))",
+          "optional": true
+        },
+        {
+          "name": "traceDepthList",
+          "tag": 6,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "msc-s-TraceDepth",
+              "tag": 0,
+              "implicit": true,
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "minimum",
+                  "value": 0
+                },
+                {
+                  "name": "medium",
+                  "value": 1
+                },
+                {
+                  "name": "maximum",
+                  "value": 2
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "mgw-TraceDepth",
+              "tag": 1,
+              "implicit": true,
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "minimum",
+                  "value": 0
+                },
+                {
+                  "name": "medium",
+                  "value": 1
+                },
+                {
+                  "name": "maximum",
+                  "value": 2
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "sgsn-TraceDepth",
+              "tag": 2,
+              "implicit": true,
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "minimum",
+                  "value": 0
+                },
+                {
+                  "name": "medium",
+                  "value": 1
+                },
+                {
+                  "name": "maximum",
+                  "value": 2
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "ggsn-TraceDepth",
+              "tag": 3,
+              "implicit": true,
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "minimum",
+                  "value": 0
+                },
+                {
+                  "name": "medium",
+                  "value": 1
+                },
+                {
+                  "name": "maximum",
+                  "value": 2
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "rnc-TraceDepth",
+              "tag": 4,
+              "implicit": true,
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "minimum",
+                  "value": 0
+                },
+                {
+                  "name": "medium",
+                  "value": 1
+                },
+                {
+                  "name": "maximum",
+                  "value": 2
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "bmsc-TraceDepth",
+              "tag": 5,
+              "implicit": true,
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "minimum",
+                  "value": 0
+                },
+                {
+                  "name": "medium",
+                  "value": 1
+                },
+                {
+                  "name": "maximum",
+                  "value": 2
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "mme-TraceDepth",
+              "tag": 6,
+              "implicit": true,
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "minimum",
+                  "value": 0
+                },
+                {
+                  "name": "medium",
+                  "value": 1
+                },
+                {
+                  "name": "maximum",
+                  "value": 2
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "sgw-TraceDepth",
+              "tag": 7,
+              "implicit": true,
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "minimum",
+                  "value": 0
+                },
+                {
+                  "name": "medium",
+                  "value": 1
+                },
+                {
+                  "name": "maximum",
+                  "value": 2
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "pgw-TraceDepth",
+              "tag": 8,
+              "implicit": true,
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "minimum",
+                  "value": 0
+                },
+                {
+                  "name": "medium",
+                  "value": 1
+                },
+                {
+                  "name": "maximum",
+                  "value": 2
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "eNB-TraceDepth",
+              "tag": 9,
+              "implicit": true,
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "minimum",
+                  "value": 0
+                },
+                {
+                  "name": "medium",
+                  "value": 1
+                },
+                {
+                  "name": "maximum",
+                  "value": 2
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "msc-s-TraceDepthExtension",
+              "tag": 10,
+              "implicit": true,
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "minimumWithoutVendorSpecificExtension",
+                  "value": 0
+                },
+                {
+                  "name": "mediumWithoutVendorSpecificExtension",
+                  "value": 1
+                },
+                {
+                  "name": "maximumWithoutVendorSpecificExtension",
+                  "value": 2
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "mgw-TraceDepthExtension",
+              "tag": 11,
+              "implicit": true,
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "minimumWithoutVendorSpecificExtension",
+                  "value": 0
+                },
+                {
+                  "name": "mediumWithoutVendorSpecificExtension",
+                  "value": 1
+                },
+                {
+                  "name": "maximumWithoutVendorSpecificExtension",
+                  "value": 2
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "sgsn-TraceDepthExtension",
+              "tag": 12,
+              "implicit": true,
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "minimumWithoutVendorSpecificExtension",
+                  "value": 0
+                },
+                {
+                  "name": "mediumWithoutVendorSpecificExtension",
+                  "value": 1
+                },
+                {
+                  "name": "maximumWithoutVendorSpecificExtension",
+                  "value": 2
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "ggsn-TraceDepthExtension",
+              "tag": 13,
+              "implicit": true,
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "minimumWithoutVendorSpecificExtension",
+                  "value": 0
+                },
+                {
+                  "name": "mediumWithoutVendorSpecificExtension",
+                  "value": 1
+                },
+                {
+                  "name": "maximumWithoutVendorSpecificExtension",
+                  "value": 2
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "rnc-TraceDepthExtension",
+              "tag": 14,
+              "implicit": true,
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "minimumWithoutVendorSpecificExtension",
+                  "value": 0
+                },
+                {
+                  "name": "mediumWithoutVendorSpecificExtension",
+                  "value": 1
+                },
+                {
+                  "name": "maximumWithoutVendorSpecificExtension",
+                  "value": 2
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "bmsc-TraceDepthExtension",
+              "tag": 15,
+              "implicit": true,
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "minimumWithoutVendorSpecificExtension",
+                  "value": 0
+                },
+                {
+                  "name": "mediumWithoutVendorSpecificExtension",
+                  "value": 1
+                },
+                {
+                  "name": "maximumWithoutVendorSpecificExtension",
+                  "value": 2
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "mme-TraceDepthExtension",
+              "tag": 16,
+              "implicit": true,
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "minimumWithoutVendorSpecificExtension",
+                  "value": 0
+                },
+                {
+                  "name": "mediumWithoutVendorSpecificExtension",
+                  "value": 1
+                },
+                {
+                  "name": "maximumWithoutVendorSpecificExtension",
+                  "value": 2
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "sgw-TraceDepthExtension",
+              "tag": 17,
+              "implicit": true,
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "minimumWithoutVendorSpecificExtension",
+                  "value": 0
+                },
+                {
+                  "name": "mediumWithoutVendorSpecificExtension",
+                  "value": 1
+                },
+                {
+                  "name": "maximumWithoutVendorSpecificExtension",
+                  "value": 2
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "pgw-TraceDepthExtension",
+              "tag": 18,
+              "implicit": true,
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "minimumWithoutVendorSpecificExtension",
+                  "value": 0
+                },
+                {
+                  "name": "mediumWithoutVendorSpecificExtension",
+                  "value": 1
+                },
+                {
+                  "name": "maximumWithoutVendorSpecificExtension",
+                  "value": 2
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "eNB-TraceDepthExtension",
+              "tag": 19,
+              "implicit": true,
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "minimumWithoutVendorSpecificExtension",
+                  "value": 0
+                },
+                {
+                  "name": "mediumWithoutVendorSpecificExtension",
+                  "value": 1
+                },
+                {
+                  "name": "maximumWithoutVendorSpecificExtension",
+                  "value": 2
+                }
+              ],
+              "optional": true
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "traceNE-TypeList",
+          "tag": 7,
+          "implicit": true,
+          "type": "BIT STRING",
+          "qualifiers": "(SIZE(6..16))",
+          "values": [
+            {
+              "name": "msc-s",
+              "value": 0
+            },
+            {
+              "name": "mgw",
+              "value": 1
+            },
+            {
+              "name": "sgsn",
+              "value": 2
+            },
+            {
+              "name": "ggsn",
+              "value": 3
+            },
+            {
+              "name": "rnc",
+              "value": 4
+            },
+            {
+              "name": "bm-sc",
+              "value": 5
+            },
+            {
+              "name": "mme",
+              "value": 6
+            },
+            {
+              "name": "sgw",
+              "value": 7
+            },
+            {
+              "name": "pgw",
+              "value": 8
+            },
+            {
+              "name": "eNB",
+              "value": 9
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "traceInterfaceList",
+          "tag": 8,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "msc-s-List",
+              "tag": 0,
+              "implicit": true,
+              "type": "BIT STRING",
+              "qualifiers": "(SIZE(10..16))",
+              "values": [
+                {
+                  "name": "a",
+                  "value": 0
+                },
+                {
+                  "name": "iu",
+                  "value": 1
+                },
+                {
+                  "name": "mc",
+                  "value": 2
+                },
+                {
+                  "name": "map-g",
+                  "value": 3
+                },
+                {
+                  "name": "map-b",
+                  "value": 4
+                },
+                {
+                  "name": "map-e",
+                  "value": 5
+                },
+                {
+                  "name": "map-f",
+                  "value": 6
+                },
+                {
+                  "name": "cap",
+                  "value": 7
+                },
+                {
+                  "name": "map-d",
+                  "value": 8
+                },
+                {
+                  "name": "map-c",
+                  "value": 9
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "mgw-List",
+              "tag": 1,
+              "implicit": true,
+              "type": "BIT STRING",
+              "qualifiers": "(SIZE(3..8))",
+              "values": [
+                {
+                  "name": "mc",
+                  "value": 0
+                },
+                {
+                  "name": "nb-up",
+                  "value": 1
+                },
+                {
+                  "name": "iu-up",
+                  "value": 2
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "sgsn-List",
+              "tag": 2,
+              "implicit": true,
+              "type": "BIT STRING",
+              "qualifiers": "(SIZE(8..16))",
+              "values": [
+                {
+                  "name": "gb",
+                  "value": 0
+                },
+                {
+                  "name": "iu",
+                  "value": 1
+                },
+                {
+                  "name": "gn",
+                  "value": 2
+                },
+                {
+                  "name": "map-gr",
+                  "value": 3
+                },
+                {
+                  "name": "map-gd",
+                  "value": 4
+                },
+                {
+                  "name": "map-gf",
+                  "value": 5
+                },
+                {
+                  "name": "gs",
+                  "value": 6
+                },
+                {
+                  "name": "ge",
+                  "value": 7
+                },
+                {
+                  "name": "s3",
+                  "value": 8
+                },
+                {
+                  "name": "s4",
+                  "value": 9
+                },
+                {
+                  "name": "s6d",
+                  "value": 10
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "ggsn-List",
+              "tag": 3,
+              "implicit": true,
+              "type": "BIT STRING",
+              "qualifiers": "(SIZE(3..8))",
+              "values": [
+                {
+                  "name": "gn",
+                  "value": 0
+                },
+                {
+                  "name": "gi",
+                  "value": 1
+                },
+                {
+                  "name": "gmb",
+                  "value": 2
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "rnc-List",
+              "tag": 4,
+              "implicit": true,
+              "type": "BIT STRING",
+              "qualifiers": "(SIZE(4..8))",
+              "values": [
+                {
+                  "name": "iu",
+                  "value": 0
+                },
+                {
+                  "name": "iur",
+                  "value": 1
+                },
+                {
+                  "name": "iub",
+                  "value": 2
+                },
+                {
+                  "name": "uu",
+                  "value": 3
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "bmsc-List",
+              "tag": 5,
+              "implicit": true,
+              "type": "BIT STRING",
+              "qualifiers": "(SIZE(1..8))",
+              "values": [
+                {
+                  "name": "gmb",
+                  "value": 0
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "mme-List",
+              "tag": 6,
+              "implicit": true,
+              "type": "BIT STRING",
+              "qualifiers": "(SIZE(5..8))",
+              "values": [
+                {
+                  "name": "s1-mme",
+                  "value": 0
+                },
+                {
+                  "name": "s3",
+                  "value": 1
+                },
+                {
+                  "name": "s6a",
+                  "value": 2
+                },
+                {
+                  "name": "s10",
+                  "value": 3
+                },
+                {
+                  "name": "s11",
+                  "value": 4
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "sgw-List",
+              "tag": 7,
+              "implicit": true,
+              "type": "BIT STRING",
+              "qualifiers": "(SIZE(5..8))",
+              "values": [
+                {
+                  "name": "s4",
+                  "value": 0
+                },
+                {
+                  "name": "s5",
+                  "value": 1
+                },
+                {
+                  "name": "s8b",
+                  "value": 2
+                },
+                {
+                  "name": "s11",
+                  "value": 3
+                },
+                {
+                  "name": "gxc",
+                  "value": 4
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "pgw-List",
+              "tag": 8,
+              "implicit": true,
+              "type": "BIT STRING",
+              "qualifiers": "(SIZE(8..16))",
+              "values": [
+                {
+                  "name": "s2a",
+                  "value": 0
+                },
+                {
+                  "name": "s2b",
+                  "value": 1
+                },
+                {
+                  "name": "s2c",
+                  "value": 2
+                },
+                {
+                  "name": "s5",
+                  "value": 3
+                },
+                {
+                  "name": "s6b",
+                  "value": 4
+                },
+                {
+                  "name": "gx",
+                  "value": 5
+                },
+                {
+                  "name": "s8b",
+                  "value": 6
+                },
+                {
+                  "name": "sgi",
+                  "value": 7
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "eNB-List",
+              "tag": 9,
+              "implicit": true,
+              "type": "BIT STRING",
+              "qualifiers": "(SIZE(3..8))",
+              "values": [
+                {
+                  "name": "s1-mme",
+                  "value": 0
+                },
+                {
+                  "name": "x2",
+                  "value": 1
+                },
+                {
+                  "name": "uu",
+                  "value": 2
+                }
+              ],
+              "optional": true
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "traceEventList",
+          "tag": 9,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "msc-s-List",
+              "tag": 0,
+              "implicit": true,
+              "type": "BIT STRING",
+              "qualifiers": "(SIZE(5..16))",
+              "values": [
+                {
+                  "name": "mo-mtCall",
+                  "value": 0
+                },
+                {
+                  "name": "mo-mt-sms",
+                  "value": 1
+                },
+                {
+                  "name": "lu-imsiAttach-imsiDetach",
+                  "value": 2
+                },
+                {
+                  "name": "handovers",
+                  "value": 3
+                },
+                {
+                  "name": "ss",
+                  "value": 4
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "mgw-List",
+              "tag": 1,
+              "implicit": true,
+              "type": "BIT STRING",
+              "qualifiers": "(SIZE(1..8))",
+              "values": [
+                {
+                  "name": "context",
+                  "value": 0
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "sgsn-List",
+              "tag": 2,
+              "implicit": true,
+              "type": "BIT STRING",
+              "qualifiers": "(SIZE(4..16))",
+              "values": [
+                {
+                  "name": "pdpContext",
+                  "value": 0
+                },
+                {
+                  "name": "mo-mt-sms",
+                  "value": 1
+                },
+                {
+                  "name": "rau-gprsAttach-gprsDetach",
+                  "value": 2
+                },
+                {
+                  "name": "mbmsContext",
+                  "value": 3
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "ggsn-List",
+              "tag": 3,
+              "implicit": true,
+              "type": "BIT STRING",
+              "qualifiers": "(SIZE(2..8))",
+              "values": [
+                {
+                  "name": "pdpContext",
+                  "value": 0
+                },
+                {
+                  "name": "mbmsContext",
+                  "value": 1
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "bmsc-List",
+              "tag": 4,
+              "implicit": true,
+              "type": "BIT STRING",
+              "qualifiers": "(SIZE(1..8))",
+              "values": [
+                {
+                  "name": "mbmsMulticastServiceActivation",
+                  "value": 0
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "mme-List",
+              "tag": 5,
+              "implicit": true,
+              "type": "BIT STRING",
+              "qualifiers": "(SIZE(6..8))",
+              "values": [
+                {
+                  "name": "ue-initiatedPDNconectivityRequest",
+                  "value": 0
+                },
+                {
+                  "name": "serviceRequestts",
+                  "value": 1
+                },
+                {
+                  "name": "initialAttachTrackingAreaUpdateDetach",
+                  "value": 2
+                },
+                {
+                  "name": "ue-initiatedPDNdisconnection",
+                  "value": 3
+                },
+                {
+                  "name": "bearerActivationModificationDeletion",
+                  "value": 4
+                },
+                {
+                  "name": "handover",
+                  "value": 5
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "sgw-List",
+              "tag": 6,
+              "implicit": true,
+              "type": "BIT STRING",
+              "qualifiers": "(SIZE(3..8))",
+              "values": [
+                {
+                  "name": "pdn-connectionCreation",
+                  "value": 0
+                },
+                {
+                  "name": "pdn-connectionTermination",
+                  "value": 1
+                },
+                {
+                  "name": "bearerActivationModificationDeletion",
+                  "value": 2
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "pgw-List",
+              "tag": 7,
+              "implicit": true,
+              "type": "BIT STRING",
+              "qualifiers": "(SIZE(3..8))",
+              "values": [
+                {
+                  "name": "pdn-connectionCreation",
+                  "value": 0
+                },
+                {
+                  "name": "pdn-connectionTermination",
+                  "value": 1
+                },
+                {
+                  "name": "bearerActivationModificationDeletion",
+                  "value": 2
+                }
+              ],
+              "optional": true
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "traceCollectionEntity",
+          "tag": 10,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(5..17))",
+          "optional": true
+        },
+        {
+          "name": "mdt-Configuration",
+          "tag": 11,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "jobType",
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "immediate-MDT-only",
+                  "value": 0
+                },
+                {
+                  "name": "logged-MDT-only",
+                  "value": 1
+                },
+                {
+                  "name": "trace-only",
+                  "value": 2
+                },
+                {
+                  "name": "immediate-MDT-and-trace",
+                  "value": 3
+                }
+              ]
+            },
+            {
+              "name": "areaScope",
+              "type": "SEQUENCE",
+              "elements": [
+                {
+                  "name": "cgi-List",
+                  "tag": 0,
+                  "implicit": true,
+                  "type": "SEQUENCE",
+                  "qualifiers": "(SIZE(1..32))",
+                  "ofElement": {
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(5..7))",
+                    "length": 24
+                  },
+                  "optional": true
+                },
+                {
+                  "name": "e-utran-cgi-List",
+                  "tag": 1,
+                  "implicit": true,
+                  "type": "SEQUENCE",
+                  "qualifiers": "(SIZE(1..32))",
+                  "ofElement": {
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(7))",
+                    "length": 21
+                  },
+                  "optional": true
+                },
+                {
+                  "name": "routingAreaId-List",
+                  "tag": 2,
+                  "implicit": true,
+                  "type": "SEQUENCE",
+                  "qualifiers": "(SIZE(1..8))",
+                  "ofElement": {
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(6))",
+                    "length": 21
+                  },
+                  "optional": true
+                },
+                {
+                  "name": "locationAreaId-List",
+                  "tag": 3,
+                  "implicit": true,
+                  "type": "SEQUENCE",
+                  "qualifiers": "(SIZE(1..8))",
+                  "ofElement": {
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(5))",
+                    "length": 21
+                  },
+                  "optional": true
+                },
+                {
+                  "name": "trackingAreaId-List",
+                  "tag": 4,
+                  "implicit": true,
+                  "type": "SEQUENCE",
+                  "qualifiers": "(SIZE(1..8))",
+                  "ofElement": {
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(5))",
+                    "length": 21
+                  },
+                  "optional": true
+                },
+                {
+                  "name": "extensionContainer",
+                  "tag": 5,
+                  "implicit": true,
+                  "type": "SEQUENCE",
+                  "elements": [
+                    {
+                      "name": "privateExtensionList",
+                      "tag": 0,
+                      "implicit": true,
+                      "type": "SEQUENCE",
+                      "qualifiers": "(SIZE(1..10))",
+                      "ofElement": {
+                        "type": "SEQUENCE",
+                        "length": 111,
+                        "elements": [
+                          {
+                            "name": "extId",
+                            "type": "MAP-EXTENSION",
+                            "qualifiers": ".&extensionId({,...})"
+                          },
+                          {
+                            "name": "extType",
+                            "type": "MAP-EXTENSION",
+                            "qualifiers": ".&ExtensionType({,...}{@extId})",
+                            "optional": true
+                          }
+                        ]
+                      },
+                      "optional": true
+                    },
+                    {
+                      "name": "pcs-Extensions",
+                      "tag": 1,
+                      "implicit": true,
+                      "type": "SEQUENCE",
+                      "elements": [],
+                      "optional": true
+                    }
+                  ],
+                  "optional": true
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "listOfMeasurements",
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(4))",
+              "optional": true
+            },
+            {
+              "name": "reportingTrigger",
+              "tag": 0,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1))",
+              "optional": true
+            },
+            {
+              "name": "reportInterval",
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "umts250ms",
+                  "value": 0
+                },
+                {
+                  "name": "umts500ms",
+                  "value": 1
+                },
+                {
+                  "name": "umts1000ms",
+                  "value": 2
+                },
+                {
+                  "name": "umts2000ms",
+                  "value": 3
+                },
+                {
+                  "name": "umts3000ms",
+                  "value": 4
+                },
+                {
+                  "name": "umts4000ms",
+                  "value": 5
+                },
+                {
+                  "name": "umts6000ms",
+                  "value": 6
+                },
+                {
+                  "name": "umts8000ms",
+                  "value": 7
+                },
+                {
+                  "name": "umts12000ms",
+                  "value": 8
+                },
+                {
+                  "name": "umts16000ms",
+                  "value": 9
+                },
+                {
+                  "name": "umts20000ms",
+                  "value": 10
+                },
+                {
+                  "name": "umts24000ms",
+                  "value": 11
+                },
+                {
+                  "name": "umts28000ms",
+                  "value": 12
+                },
+                {
+                  "name": "umts32000ms",
+                  "value": 13
+                },
+                {
+                  "name": "umts64000ms",
+                  "value": 14
+                },
+                {
+                  "name": "lte120ms",
+                  "value": 15
+                },
+                {
+                  "name": "lte240ms",
+                  "value": 16
+                },
+                {
+                  "name": "lte480ms",
+                  "value": 17
+                },
+                {
+                  "name": "lte640ms",
+                  "value": 18
+                },
+                {
+                  "name": "lte1024ms",
+                  "value": 19
+                },
+                {
+                  "name": "lte2048ms",
+                  "value": 20
+                },
+                {
+                  "name": "lte5120ms",
+                  "value": 21
+                },
+                {
+                  "name": "lte10240ms",
+                  "value": 22
+                },
+                {
+                  "name": "lte1min",
+                  "value": 23
+                },
+                {
+                  "name": "lte6min",
+                  "value": 24
+                },
+                {
+                  "name": "lte12min",
+                  "value": 25
+                },
+                {
+                  "name": "lte30min",
+                  "value": 26
+                },
+                {
+                  "name": "lte60min",
+                  "value": 27
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "reportAmount",
+              "tag": 1,
+              "implicit": true,
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "d1",
+                  "value": 0
+                },
+                {
+                  "name": "d2",
+                  "value": 1
+                },
+                {
+                  "name": "d4",
+                  "value": 2
+                },
+                {
+                  "name": "d8",
+                  "value": 3
+                },
+                {
+                  "name": "d16",
+                  "value": 4
+                },
+                {
+                  "name": "d32",
+                  "value": 5
+                },
+                {
+                  "name": "d64",
+                  "value": 6
+                },
+                {
+                  "name": "infinity",
+                  "value": 7
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "eventThresholdRSRP",
+              "type": "INTEGER",
+              "qualifiers": "(0..97)",
+              "optional": true
+            },
+            {
+              "name": "eventThresholdRSRQ",
+              "tag": 2,
+              "implicit": true,
+              "type": "INTEGER",
+              "qualifiers": "(0..34)",
+              "optional": true
+            },
+            {
+              "name": "loggingInterval",
+              "tag": 3,
+              "implicit": true,
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "d1dot28",
+                  "value": 0
+                },
+                {
+                  "name": "d2dot56",
+                  "value": 1
+                },
+                {
+                  "name": "d5dot12",
+                  "value": 2
+                },
+                {
+                  "name": "d10dot24",
+                  "value": 3
+                },
+                {
+                  "name": "d20dot48",
+                  "value": 4
+                },
+                {
+                  "name": "d30dot72",
+                  "value": 5
+                },
+                {
+                  "name": "d40dot96",
+                  "value": 6
+                },
+                {
+                  "name": "d61dot44",
+                  "value": 7
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "loggingDuration",
+              "tag": 4,
+              "implicit": true,
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "d600sec",
+                  "value": 0
+                },
+                {
+                  "name": "d1200sec",
+                  "value": 1
+                },
+                {
+                  "name": "d2400sec",
+                  "value": 2
+                },
+                {
+                  "name": "d3600sec",
+                  "value": 3
+                },
+                {
+                  "name": "d5400sec",
+                  "value": 4
+                },
+                {
+                  "name": "d7200sec",
+                  "value": 5
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "extensionContainer",
+              "tag": 5,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [
+                {
+                  "name": "privateExtensionList",
+                  "tag": 0,
+                  "implicit": true,
+                  "type": "SEQUENCE",
+                  "qualifiers": "(SIZE(1..10))",
+                  "ofElement": {
+                    "type": "SEQUENCE",
+                    "length": 111,
+                    "elements": [
+                      {
+                        "name": "extId",
+                        "type": "MAP-EXTENSION",
+                        "qualifiers": ".&extensionId({,...})"
+                      },
+                      {
+                        "name": "extType",
+                        "type": "MAP-EXTENSION",
+                        "qualifiers": ".&ExtensionType({,...}{@extId})",
+                        "optional": true
+                      }
+                    ]
+                  },
+                  "optional": true
+                },
+                {
+                  "name": "pcs-Extensions",
+                  "tag": 1,
+                  "implicit": true,
+                  "type": "SEQUENCE",
+                  "elements": [],
+                  "optional": true
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "measurementPeriodUMTS",
+              "tag": 6,
+              "implicit": true,
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "d250ms",
+                  "value": 0
+                },
+                {
+                  "name": "d500ms",
+                  "value": 1
+                },
+                {
+                  "name": "d1000ms",
+                  "value": 2
+                },
+                {
+                  "name": "d2000ms",
+                  "value": 3
+                },
+                {
+                  "name": "d3000ms",
+                  "value": 4
+                },
+                {
+                  "name": "d4000ms",
+                  "value": 5
+                },
+                {
+                  "name": "d6000ms",
+                  "value": 6
+                },
+                {
+                  "name": "d8000ms",
+                  "value": 7
+                },
+                {
+                  "name": "d12000ms",
+                  "value": 8
+                },
+                {
+                  "name": "d16000ms",
+                  "value": 9
+                },
+                {
+                  "name": "d20000ms",
+                  "value": 10
+                },
+                {
+                  "name": "d24000ms",
+                  "value": 11
+                },
+                {
+                  "name": "d28000ms",
+                  "value": 12
+                },
+                {
+                  "name": "d32000ms",
+                  "value": 13
+                },
+                {
+                  "name": "d64000ms",
+                  "value": 14
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "measurementPeriodLTE",
+              "tag": 7,
+              "implicit": true,
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "d1024ms",
+                  "value": 0
+                },
+                {
+                  "name": "d1280ms",
+                  "value": 1
+                },
+                {
+                  "name": "d2048ms",
+                  "value": 2
+                },
+                {
+                  "name": "d2560ms",
+                  "value": 3
+                },
+                {
+                  "name": "d5120ms",
+                  "value": 4
+                },
+                {
+                  "name": "d10240ms",
+                  "value": 5
+                },
+                {
+                  "name": "d1min",
+                  "value": 6
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "collectionPeriodRRM-UMTS",
+              "tag": 8,
+              "implicit": true,
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "d250ms",
+                  "value": 0
+                },
+                {
+                  "name": "d500ms",
+                  "value": 1
+                },
+                {
+                  "name": "d1000ms",
+                  "value": 2
+                },
+                {
+                  "name": "d2000ms",
+                  "value": 3
+                },
+                {
+                  "name": "d3000ms",
+                  "value": 4
+                },
+                {
+                  "name": "d4000ms",
+                  "value": 5
+                },
+                {
+                  "name": "d6000ms",
+                  "value": 6
+                },
+                {
+                  "name": "d8000ms",
+                  "value": 7
+                },
+                {
+                  "name": "d12000ms",
+                  "value": 8
+                },
+                {
+                  "name": "d16000ms",
+                  "value": 9
+                },
+                {
+                  "name": "d20000ms",
+                  "value": 10
+                },
+                {
+                  "name": "d24000ms",
+                  "value": 11
+                },
+                {
+                  "name": "d28000ms",
+                  "value": 12
+                },
+                {
+                  "name": "d32000ms",
+                  "value": 13
+                },
+                {
+                  "name": "d64000ms",
+                  "value": 14
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "collectionPeriodRRM-LTE",
+              "tag": 9,
+              "implicit": true,
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "d1024ms",
+                  "value": 0
+                },
+                {
+                  "name": "d1280ms",
+                  "value": 1
+                },
+                {
+                  "name": "d2048ms",
+                  "value": 2
+                },
+                {
+                  "name": "d2560ms",
+                  "value": 3
+                },
+                {
+                  "name": "d5120ms",
+                  "value": 4
+                },
+                {
+                  "name": "d10240ms",
+                  "value": 5
+                },
+                {
+                  "name": "d1min",
+                  "value": 6
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "positioningMethod",
+              "tag": 10,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1))",
+              "optional": true
+            },
+            {
+              "name": "measurementQuantity",
+              "tag": 11,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1))",
+              "optional": true
+            },
+            {
+              "name": "eventThreshold1F",
+              "tag": 12,
+              "implicit": true,
+              "type": "INTEGER",
+              "qualifiers": "(-120..165)",
+              "optional": true
+            },
+            {
+              "name": "eventThreshold1I",
+              "tag": 13,
+              "implicit": true,
+              "type": "INTEGER",
+              "qualifiers": "(-120..-25)",
+              "optional": true
+            },
+            {
+              "name": "mdt-Allowed-PLMN-List",
+              "tag": 14,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..16))",
+              "ofElement": {
+                "type": "OCTET STRING",
+                "qualifiers": "(SIZE(3))",
+                "length": 21
+              },
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "result": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "extensionContainer",
+          "tag": 0,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "length": 111,
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "traceSupportIndicator",
+          "tag": 1,
+          "implicit": true,
+          "type": "NULL",
+          "optional": true
+        }
+      ]
+    },
+    "code": 50
+  },
+  "deactivateTraceMode": {
+    "argument": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "imsi",
+          "tag": 0,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(3..8))",
+          "optional": true
+        },
+        {
+          "name": "traceReference",
+          "tag": 1,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1..2))"
+        },
+        {
+          "name": "extensionContainer",
+          "tag": 2,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "length": 111,
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "traceReference2",
+          "tag": 3,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(3))",
+          "optional": true
+        }
+      ]
+    },
+    "result": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "extensionContainer",
+          "tag": 0,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "length": 111,
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 51
+  },
+  "sendIMSI": {
+    "argument": {
+      "type": "OCTET STRING",
+      "qualifiers": "(SIZE(1..20))"
+    },
+    "result": {
+      "type": "OCTET STRING",
+      "qualifiers": "(SIZE(3..8))"
+    },
+    "code": 58
+  }
+}

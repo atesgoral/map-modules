@@ -1,0 +1,2227 @@
+{
+  "registerSS": {
+    "argument": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "ss-Code",
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1))"
+        },
+        {
+          "name": "basicService",
+          "type": "CHOICE",
+          "elements": [
+            {
+              "name": "bearerService",
+              "tag": 2,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1))"
+            },
+            {
+              "name": "teleservice",
+              "tag": 3,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1))"
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "forwardedToNumber",
+          "tag": 4,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1..20))",
+          "optional": true
+        },
+        {
+          "name": "forwardedToSubaddress",
+          "tag": 6,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1..21))",
+          "optional": true
+        },
+        {
+          "name": "noReplyConditionTime",
+          "tag": 5,
+          "implicit": true,
+          "type": "INTEGER",
+          "qualifiers": "(5..30)",
+          "optional": true
+        },
+        {
+          "name": "defaultPriority",
+          "tag": 7,
+          "implicit": true,
+          "type": "INTEGER",
+          "qualifiers": "(0..15)",
+          "optional": true
+        },
+        {
+          "name": "nbrUser",
+          "tag": 8,
+          "implicit": true,
+          "type": "INTEGER",
+          "qualifiers": "(1..7)",
+          "optional": true
+        },
+        {
+          "name": "longFTN-Supported",
+          "tag": 9,
+          "implicit": true,
+          "type": "NULL",
+          "optional": true
+        }
+      ]
+    },
+    "result": {
+      "type": "CHOICE",
+      "elements": [
+        {
+          "name": "forwardingInfo",
+          "tag": 0,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "ss-Code",
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1))",
+              "optional": true
+            },
+            {
+              "name": "forwardingFeatureList",
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..13))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "length": 521,
+                "elements": [
+                  {
+                    "name": "basicService",
+                    "type": "CHOICE",
+                    "elements": [
+                      {
+                        "name": "bearerService",
+                        "tag": 2,
+                        "implicit": true,
+                        "type": "OCTET STRING",
+                        "qualifiers": "(SIZE(1))"
+                      },
+                      {
+                        "name": "teleservice",
+                        "tag": 3,
+                        "implicit": true,
+                        "type": "OCTET STRING",
+                        "qualifiers": "(SIZE(1))"
+                      }
+                    ],
+                    "optional": true
+                  },
+                  {
+                    "name": "ss-Status",
+                    "tag": 4,
+                    "implicit": true,
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(1))",
+                    "optional": true
+                  },
+                  {
+                    "name": "forwardedToNumber",
+                    "tag": 5,
+                    "implicit": true,
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(1..9))",
+                    "optional": true
+                  },
+                  {
+                    "name": "forwardedToSubaddress",
+                    "tag": 8,
+                    "implicit": true,
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(1..21))",
+                    "optional": true
+                  },
+                  {
+                    "name": "forwardingOptions",
+                    "tag": 6,
+                    "implicit": true,
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(1))",
+                    "optional": true
+                  },
+                  {
+                    "name": "noReplyConditionTime",
+                    "tag": 7,
+                    "implicit": true,
+                    "type": "INTEGER",
+                    "qualifiers": "(5..30)",
+                    "optional": true
+                  },
+                  {
+                    "name": "longForwardedToNumber",
+                    "tag": 9,
+                    "implicit": true,
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(1..15))",
+                    "optional": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "callBarringInfo",
+          "tag": 1,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "ss-Code",
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1))",
+              "optional": true
+            },
+            {
+              "name": "callBarringFeatureList",
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..13))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "length": 185,
+                "elements": [
+                  {
+                    "name": "basicService",
+                    "type": "CHOICE",
+                    "elements": [
+                      {
+                        "name": "bearerService",
+                        "tag": 2,
+                        "implicit": true,
+                        "type": "OCTET STRING",
+                        "qualifiers": "(SIZE(1))"
+                      },
+                      {
+                        "name": "teleservice",
+                        "tag": 3,
+                        "implicit": true,
+                        "type": "OCTET STRING",
+                        "qualifiers": "(SIZE(1))"
+                      }
+                    ],
+                    "optional": true
+                  },
+                  {
+                    "name": "ss-Status",
+                    "tag": 4,
+                    "implicit": true,
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(1))",
+                    "optional": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "ss-Data",
+          "tag": 3,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "ss-Code",
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1))",
+              "optional": true
+            },
+            {
+              "name": "ss-Status",
+              "tag": 4,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1))",
+              "optional": true
+            },
+            {
+              "name": "ss-SubscriptionOption",
+              "type": "CHOICE",
+              "elements": [
+                {
+                  "name": "cliRestrictionOption",
+                  "tag": 2,
+                  "implicit": true,
+                  "type": "ENUMERATED",
+                  "values": [
+                    {
+                      "name": "permanent",
+                      "value": 0
+                    },
+                    {
+                      "name": "temporaryDefaultRestricted",
+                      "value": 1
+                    },
+                    {
+                      "name": "temporaryDefaultAllowed",
+                      "value": 2
+                    }
+                  ]
+                },
+                {
+                  "name": "overrideCategory",
+                  "tag": 1,
+                  "implicit": true,
+                  "type": "ENUMERATED",
+                  "values": [
+                    {
+                      "name": "overrideEnabled",
+                      "value": 0
+                    },
+                    {
+                      "name": "overrideDisabled",
+                      "value": 1
+                    }
+                  ]
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "basicServiceGroupList",
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..13))",
+              "ofElement": {
+                "type": "CHOICE",
+                "length": 99,
+                "elements": [
+                  {
+                    "name": "bearerService",
+                    "tag": 2,
+                    "implicit": true,
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(1))"
+                  },
+                  {
+                    "name": "teleservice",
+                    "tag": 3,
+                    "implicit": true,
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(1))"
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "defaultPriority",
+              "type": "INTEGER",
+              "qualifiers": "(0..15)",
+              "optional": true
+            },
+            {
+              "name": "nbrUser",
+              "tag": 5,
+              "implicit": true,
+              "type": "INTEGER",
+              "qualifiers": "(1..7)",
+              "optional": true
+            }
+          ]
+        }
+      ]
+    },
+    "code": 10
+  },
+  "eraseSS": {
+    "argument": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "ss-Code",
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1))"
+        },
+        {
+          "name": "basicService",
+          "type": "CHOICE",
+          "elements": [
+            {
+              "name": "bearerService",
+              "tag": 2,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1))"
+            },
+            {
+              "name": "teleservice",
+              "tag": 3,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1))"
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "longFTN-Supported",
+          "tag": 4,
+          "implicit": true,
+          "type": "NULL",
+          "optional": true
+        }
+      ]
+    },
+    "result": {
+      "type": "CHOICE",
+      "elements": [
+        {
+          "name": "forwardingInfo",
+          "tag": 0,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "ss-Code",
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1))",
+              "optional": true
+            },
+            {
+              "name": "forwardingFeatureList",
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..13))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "length": 521,
+                "elements": [
+                  {
+                    "name": "basicService",
+                    "type": "CHOICE",
+                    "elements": [
+                      {
+                        "name": "bearerService",
+                        "tag": 2,
+                        "implicit": true,
+                        "type": "OCTET STRING",
+                        "qualifiers": "(SIZE(1))"
+                      },
+                      {
+                        "name": "teleservice",
+                        "tag": 3,
+                        "implicit": true,
+                        "type": "OCTET STRING",
+                        "qualifiers": "(SIZE(1))"
+                      }
+                    ],
+                    "optional": true
+                  },
+                  {
+                    "name": "ss-Status",
+                    "tag": 4,
+                    "implicit": true,
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(1))",
+                    "optional": true
+                  },
+                  {
+                    "name": "forwardedToNumber",
+                    "tag": 5,
+                    "implicit": true,
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(1..9))",
+                    "optional": true
+                  },
+                  {
+                    "name": "forwardedToSubaddress",
+                    "tag": 8,
+                    "implicit": true,
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(1..21))",
+                    "optional": true
+                  },
+                  {
+                    "name": "forwardingOptions",
+                    "tag": 6,
+                    "implicit": true,
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(1))",
+                    "optional": true
+                  },
+                  {
+                    "name": "noReplyConditionTime",
+                    "tag": 7,
+                    "implicit": true,
+                    "type": "INTEGER",
+                    "qualifiers": "(5..30)",
+                    "optional": true
+                  },
+                  {
+                    "name": "longForwardedToNumber",
+                    "tag": 9,
+                    "implicit": true,
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(1..15))",
+                    "optional": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "callBarringInfo",
+          "tag": 1,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "ss-Code",
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1))",
+              "optional": true
+            },
+            {
+              "name": "callBarringFeatureList",
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..13))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "length": 185,
+                "elements": [
+                  {
+                    "name": "basicService",
+                    "type": "CHOICE",
+                    "elements": [
+                      {
+                        "name": "bearerService",
+                        "tag": 2,
+                        "implicit": true,
+                        "type": "OCTET STRING",
+                        "qualifiers": "(SIZE(1))"
+                      },
+                      {
+                        "name": "teleservice",
+                        "tag": 3,
+                        "implicit": true,
+                        "type": "OCTET STRING",
+                        "qualifiers": "(SIZE(1))"
+                      }
+                    ],
+                    "optional": true
+                  },
+                  {
+                    "name": "ss-Status",
+                    "tag": 4,
+                    "implicit": true,
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(1))",
+                    "optional": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "ss-Data",
+          "tag": 3,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "ss-Code",
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1))",
+              "optional": true
+            },
+            {
+              "name": "ss-Status",
+              "tag": 4,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1))",
+              "optional": true
+            },
+            {
+              "name": "ss-SubscriptionOption",
+              "type": "CHOICE",
+              "elements": [
+                {
+                  "name": "cliRestrictionOption",
+                  "tag": 2,
+                  "implicit": true,
+                  "type": "ENUMERATED",
+                  "values": [
+                    {
+                      "name": "permanent",
+                      "value": 0
+                    },
+                    {
+                      "name": "temporaryDefaultRestricted",
+                      "value": 1
+                    },
+                    {
+                      "name": "temporaryDefaultAllowed",
+                      "value": 2
+                    }
+                  ]
+                },
+                {
+                  "name": "overrideCategory",
+                  "tag": 1,
+                  "implicit": true,
+                  "type": "ENUMERATED",
+                  "values": [
+                    {
+                      "name": "overrideEnabled",
+                      "value": 0
+                    },
+                    {
+                      "name": "overrideDisabled",
+                      "value": 1
+                    }
+                  ]
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "basicServiceGroupList",
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..13))",
+              "ofElement": {
+                "type": "CHOICE",
+                "length": 99,
+                "elements": [
+                  {
+                    "name": "bearerService",
+                    "tag": 2,
+                    "implicit": true,
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(1))"
+                  },
+                  {
+                    "name": "teleservice",
+                    "tag": 3,
+                    "implicit": true,
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(1))"
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "defaultPriority",
+              "type": "INTEGER",
+              "qualifiers": "(0..15)",
+              "optional": true
+            },
+            {
+              "name": "nbrUser",
+              "tag": 5,
+              "implicit": true,
+              "type": "INTEGER",
+              "qualifiers": "(1..7)",
+              "optional": true
+            }
+          ]
+        }
+      ]
+    },
+    "code": 11
+  },
+  "activateSS": {
+    "argument": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "ss-Code",
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1))"
+        },
+        {
+          "name": "basicService",
+          "type": "CHOICE",
+          "elements": [
+            {
+              "name": "bearerService",
+              "tag": 2,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1))"
+            },
+            {
+              "name": "teleservice",
+              "tag": 3,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1))"
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "longFTN-Supported",
+          "tag": 4,
+          "implicit": true,
+          "type": "NULL",
+          "optional": true
+        }
+      ]
+    },
+    "result": {
+      "type": "CHOICE",
+      "elements": [
+        {
+          "name": "forwardingInfo",
+          "tag": 0,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "ss-Code",
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1))",
+              "optional": true
+            },
+            {
+              "name": "forwardingFeatureList",
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..13))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "length": 521,
+                "elements": [
+                  {
+                    "name": "basicService",
+                    "type": "CHOICE",
+                    "elements": [
+                      {
+                        "name": "bearerService",
+                        "tag": 2,
+                        "implicit": true,
+                        "type": "OCTET STRING",
+                        "qualifiers": "(SIZE(1))"
+                      },
+                      {
+                        "name": "teleservice",
+                        "tag": 3,
+                        "implicit": true,
+                        "type": "OCTET STRING",
+                        "qualifiers": "(SIZE(1))"
+                      }
+                    ],
+                    "optional": true
+                  },
+                  {
+                    "name": "ss-Status",
+                    "tag": 4,
+                    "implicit": true,
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(1))",
+                    "optional": true
+                  },
+                  {
+                    "name": "forwardedToNumber",
+                    "tag": 5,
+                    "implicit": true,
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(1..9))",
+                    "optional": true
+                  },
+                  {
+                    "name": "forwardedToSubaddress",
+                    "tag": 8,
+                    "implicit": true,
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(1..21))",
+                    "optional": true
+                  },
+                  {
+                    "name": "forwardingOptions",
+                    "tag": 6,
+                    "implicit": true,
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(1))",
+                    "optional": true
+                  },
+                  {
+                    "name": "noReplyConditionTime",
+                    "tag": 7,
+                    "implicit": true,
+                    "type": "INTEGER",
+                    "qualifiers": "(5..30)",
+                    "optional": true
+                  },
+                  {
+                    "name": "longForwardedToNumber",
+                    "tag": 9,
+                    "implicit": true,
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(1..15))",
+                    "optional": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "callBarringInfo",
+          "tag": 1,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "ss-Code",
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1))",
+              "optional": true
+            },
+            {
+              "name": "callBarringFeatureList",
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..13))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "length": 185,
+                "elements": [
+                  {
+                    "name": "basicService",
+                    "type": "CHOICE",
+                    "elements": [
+                      {
+                        "name": "bearerService",
+                        "tag": 2,
+                        "implicit": true,
+                        "type": "OCTET STRING",
+                        "qualifiers": "(SIZE(1))"
+                      },
+                      {
+                        "name": "teleservice",
+                        "tag": 3,
+                        "implicit": true,
+                        "type": "OCTET STRING",
+                        "qualifiers": "(SIZE(1))"
+                      }
+                    ],
+                    "optional": true
+                  },
+                  {
+                    "name": "ss-Status",
+                    "tag": 4,
+                    "implicit": true,
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(1))",
+                    "optional": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "ss-Data",
+          "tag": 3,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "ss-Code",
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1))",
+              "optional": true
+            },
+            {
+              "name": "ss-Status",
+              "tag": 4,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1))",
+              "optional": true
+            },
+            {
+              "name": "ss-SubscriptionOption",
+              "type": "CHOICE",
+              "elements": [
+                {
+                  "name": "cliRestrictionOption",
+                  "tag": 2,
+                  "implicit": true,
+                  "type": "ENUMERATED",
+                  "values": [
+                    {
+                      "name": "permanent",
+                      "value": 0
+                    },
+                    {
+                      "name": "temporaryDefaultRestricted",
+                      "value": 1
+                    },
+                    {
+                      "name": "temporaryDefaultAllowed",
+                      "value": 2
+                    }
+                  ]
+                },
+                {
+                  "name": "overrideCategory",
+                  "tag": 1,
+                  "implicit": true,
+                  "type": "ENUMERATED",
+                  "values": [
+                    {
+                      "name": "overrideEnabled",
+                      "value": 0
+                    },
+                    {
+                      "name": "overrideDisabled",
+                      "value": 1
+                    }
+                  ]
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "basicServiceGroupList",
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..13))",
+              "ofElement": {
+                "type": "CHOICE",
+                "length": 99,
+                "elements": [
+                  {
+                    "name": "bearerService",
+                    "tag": 2,
+                    "implicit": true,
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(1))"
+                  },
+                  {
+                    "name": "teleservice",
+                    "tag": 3,
+                    "implicit": true,
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(1))"
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "defaultPriority",
+              "type": "INTEGER",
+              "qualifiers": "(0..15)",
+              "optional": true
+            },
+            {
+              "name": "nbrUser",
+              "tag": 5,
+              "implicit": true,
+              "type": "INTEGER",
+              "qualifiers": "(1..7)",
+              "optional": true
+            }
+          ]
+        }
+      ]
+    },
+    "code": 12
+  },
+  "deactivateSS": {
+    "argument": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "ss-Code",
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1))"
+        },
+        {
+          "name": "basicService",
+          "type": "CHOICE",
+          "elements": [
+            {
+              "name": "bearerService",
+              "tag": 2,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1))"
+            },
+            {
+              "name": "teleservice",
+              "tag": 3,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1))"
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "longFTN-Supported",
+          "tag": 4,
+          "implicit": true,
+          "type": "NULL",
+          "optional": true
+        }
+      ]
+    },
+    "result": {
+      "type": "CHOICE",
+      "elements": [
+        {
+          "name": "forwardingInfo",
+          "tag": 0,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "ss-Code",
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1))",
+              "optional": true
+            },
+            {
+              "name": "forwardingFeatureList",
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..13))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "length": 521,
+                "elements": [
+                  {
+                    "name": "basicService",
+                    "type": "CHOICE",
+                    "elements": [
+                      {
+                        "name": "bearerService",
+                        "tag": 2,
+                        "implicit": true,
+                        "type": "OCTET STRING",
+                        "qualifiers": "(SIZE(1))"
+                      },
+                      {
+                        "name": "teleservice",
+                        "tag": 3,
+                        "implicit": true,
+                        "type": "OCTET STRING",
+                        "qualifiers": "(SIZE(1))"
+                      }
+                    ],
+                    "optional": true
+                  },
+                  {
+                    "name": "ss-Status",
+                    "tag": 4,
+                    "implicit": true,
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(1))",
+                    "optional": true
+                  },
+                  {
+                    "name": "forwardedToNumber",
+                    "tag": 5,
+                    "implicit": true,
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(1..9))",
+                    "optional": true
+                  },
+                  {
+                    "name": "forwardedToSubaddress",
+                    "tag": 8,
+                    "implicit": true,
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(1..21))",
+                    "optional": true
+                  },
+                  {
+                    "name": "forwardingOptions",
+                    "tag": 6,
+                    "implicit": true,
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(1))",
+                    "optional": true
+                  },
+                  {
+                    "name": "noReplyConditionTime",
+                    "tag": 7,
+                    "implicit": true,
+                    "type": "INTEGER",
+                    "qualifiers": "(5..30)",
+                    "optional": true
+                  },
+                  {
+                    "name": "longForwardedToNumber",
+                    "tag": 9,
+                    "implicit": true,
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(1..15))",
+                    "optional": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "callBarringInfo",
+          "tag": 1,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "ss-Code",
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1))",
+              "optional": true
+            },
+            {
+              "name": "callBarringFeatureList",
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..13))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "length": 185,
+                "elements": [
+                  {
+                    "name": "basicService",
+                    "type": "CHOICE",
+                    "elements": [
+                      {
+                        "name": "bearerService",
+                        "tag": 2,
+                        "implicit": true,
+                        "type": "OCTET STRING",
+                        "qualifiers": "(SIZE(1))"
+                      },
+                      {
+                        "name": "teleservice",
+                        "tag": 3,
+                        "implicit": true,
+                        "type": "OCTET STRING",
+                        "qualifiers": "(SIZE(1))"
+                      }
+                    ],
+                    "optional": true
+                  },
+                  {
+                    "name": "ss-Status",
+                    "tag": 4,
+                    "implicit": true,
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(1))",
+                    "optional": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "ss-Data",
+          "tag": 3,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "ss-Code",
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1))",
+              "optional": true
+            },
+            {
+              "name": "ss-Status",
+              "tag": 4,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1))",
+              "optional": true
+            },
+            {
+              "name": "ss-SubscriptionOption",
+              "type": "CHOICE",
+              "elements": [
+                {
+                  "name": "cliRestrictionOption",
+                  "tag": 2,
+                  "implicit": true,
+                  "type": "ENUMERATED",
+                  "values": [
+                    {
+                      "name": "permanent",
+                      "value": 0
+                    },
+                    {
+                      "name": "temporaryDefaultRestricted",
+                      "value": 1
+                    },
+                    {
+                      "name": "temporaryDefaultAllowed",
+                      "value": 2
+                    }
+                  ]
+                },
+                {
+                  "name": "overrideCategory",
+                  "tag": 1,
+                  "implicit": true,
+                  "type": "ENUMERATED",
+                  "values": [
+                    {
+                      "name": "overrideEnabled",
+                      "value": 0
+                    },
+                    {
+                      "name": "overrideDisabled",
+                      "value": 1
+                    }
+                  ]
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "basicServiceGroupList",
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..13))",
+              "ofElement": {
+                "type": "CHOICE",
+                "length": 99,
+                "elements": [
+                  {
+                    "name": "bearerService",
+                    "tag": 2,
+                    "implicit": true,
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(1))"
+                  },
+                  {
+                    "name": "teleservice",
+                    "tag": 3,
+                    "implicit": true,
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(1))"
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "defaultPriority",
+              "type": "INTEGER",
+              "qualifiers": "(0..15)",
+              "optional": true
+            },
+            {
+              "name": "nbrUser",
+              "tag": 5,
+              "implicit": true,
+              "type": "INTEGER",
+              "qualifiers": "(1..7)",
+              "optional": true
+            }
+          ]
+        }
+      ]
+    },
+    "code": 13
+  },
+  "interrogateSS": {
+    "argument": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "ss-Code",
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1))"
+        },
+        {
+          "name": "basicService",
+          "type": "CHOICE",
+          "elements": [
+            {
+              "name": "bearerService",
+              "tag": 2,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1))"
+            },
+            {
+              "name": "teleservice",
+              "tag": 3,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1))"
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "longFTN-Supported",
+          "tag": 4,
+          "implicit": true,
+          "type": "NULL",
+          "optional": true
+        }
+      ]
+    },
+    "result": {
+      "type": "CHOICE",
+      "elements": [
+        {
+          "name": "ss-Status",
+          "tag": 0,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1))"
+        },
+        {
+          "name": "basicServiceGroupList",
+          "tag": 2,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "qualifiers": "(SIZE(1..13))",
+          "ofElement": {
+            "type": "CHOICE",
+            "length": 99,
+            "elements": [
+              {
+                "name": "bearerService",
+                "tag": 2,
+                "implicit": true,
+                "type": "OCTET STRING",
+                "qualifiers": "(SIZE(1))"
+              },
+              {
+                "name": "teleservice",
+                "tag": 3,
+                "implicit": true,
+                "type": "OCTET STRING",
+                "qualifiers": "(SIZE(1))"
+              }
+            ]
+          }
+        },
+        {
+          "name": "forwardingFeatureList",
+          "tag": 3,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "qualifiers": "(SIZE(1..13))",
+          "ofElement": {
+            "type": "SEQUENCE",
+            "length": 521,
+            "elements": [
+              {
+                "name": "basicService",
+                "type": "CHOICE",
+                "elements": [
+                  {
+                    "name": "bearerService",
+                    "tag": 2,
+                    "implicit": true,
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(1))"
+                  },
+                  {
+                    "name": "teleservice",
+                    "tag": 3,
+                    "implicit": true,
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(1))"
+                  }
+                ],
+                "optional": true
+              },
+              {
+                "name": "ss-Status",
+                "tag": 4,
+                "implicit": true,
+                "type": "OCTET STRING",
+                "qualifiers": "(SIZE(1))",
+                "optional": true
+              },
+              {
+                "name": "forwardedToNumber",
+                "tag": 5,
+                "implicit": true,
+                "type": "OCTET STRING",
+                "qualifiers": "(SIZE(1..9))",
+                "optional": true
+              },
+              {
+                "name": "forwardedToSubaddress",
+                "tag": 8,
+                "implicit": true,
+                "type": "OCTET STRING",
+                "qualifiers": "(SIZE(1..21))",
+                "optional": true
+              },
+              {
+                "name": "forwardingOptions",
+                "tag": 6,
+                "implicit": true,
+                "type": "OCTET STRING",
+                "qualifiers": "(SIZE(1))",
+                "optional": true
+              },
+              {
+                "name": "noReplyConditionTime",
+                "tag": 7,
+                "implicit": true,
+                "type": "INTEGER",
+                "qualifiers": "(5..30)",
+                "optional": true
+              },
+              {
+                "name": "longForwardedToNumber",
+                "tag": 9,
+                "implicit": true,
+                "type": "OCTET STRING",
+                "qualifiers": "(SIZE(1..15))",
+                "optional": true
+              }
+            ]
+          }
+        },
+        {
+          "name": "genericServiceInfo",
+          "tag": 4,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "ss-Status",
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1))"
+            },
+            {
+              "name": "cliRestrictionOption",
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "permanent",
+                  "value": 0
+                },
+                {
+                  "name": "temporaryDefaultRestricted",
+                  "value": 1
+                },
+                {
+                  "name": "temporaryDefaultAllowed",
+                  "value": 2
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "maximumEntitledPriority",
+              "tag": 0,
+              "implicit": true,
+              "type": "INTEGER",
+              "qualifiers": "(0..15)",
+              "optional": true
+            },
+            {
+              "name": "defaultPriority",
+              "tag": 1,
+              "implicit": true,
+              "type": "INTEGER",
+              "qualifiers": "(0..15)",
+              "optional": true
+            },
+            {
+              "name": "ccbs-FeatureList",
+              "tag": 2,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..5))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "length": 329,
+                "elements": [
+                  {
+                    "name": "ccbs-Index",
+                    "tag": 0,
+                    "implicit": true,
+                    "type": "INTEGER",
+                    "qualifiers": "(1..5)",
+                    "optional": true
+                  },
+                  {
+                    "name": "b-subscriberNumber",
+                    "tag": 1,
+                    "implicit": true,
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(1..9))",
+                    "optional": true
+                  },
+                  {
+                    "name": "b-subscriberSubaddress",
+                    "tag": 2,
+                    "implicit": true,
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(1..21))",
+                    "optional": true
+                  },
+                  {
+                    "name": "basicServiceGroup",
+                    "tag": 3,
+                    "type": "CHOICE",
+                    "elements": [
+                      {
+                        "name": "bearerService",
+                        "tag": 2,
+                        "implicit": true,
+                        "type": "OCTET STRING",
+                        "qualifiers": "(SIZE(1))"
+                      },
+                      {
+                        "name": "teleservice",
+                        "tag": 3,
+                        "implicit": true,
+                        "type": "OCTET STRING",
+                        "qualifiers": "(SIZE(1))"
+                      }
+                    ],
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "nbrSB",
+              "tag": 3,
+              "implicit": true,
+              "type": "INTEGER",
+              "qualifiers": "(2..7)",
+              "optional": true
+            },
+            {
+              "name": "nbrUser",
+              "tag": 4,
+              "implicit": true,
+              "type": "INTEGER",
+              "qualifiers": "(1..7)",
+              "optional": true
+            },
+            {
+              "name": "nbrSN",
+              "tag": 5,
+              "implicit": true,
+              "type": "INTEGER",
+              "qualifiers": "(1..7)",
+              "optional": true
+            }
+          ]
+        }
+      ]
+    },
+    "code": 14
+  },
+  "processUnstructuredSS-Request": {
+    "argument": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "ussd-DataCodingScheme",
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1))"
+        },
+        {
+          "name": "ussd-String",
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1..160))"
+        },
+        {
+          "name": "alertingPattern",
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1))",
+          "optional": true
+        },
+        {
+          "name": "msisdn",
+          "tag": 0,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1..9))",
+          "optional": true
+        }
+      ]
+    },
+    "result": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "ussd-DataCodingScheme",
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1))"
+        },
+        {
+          "name": "ussd-String",
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1..160))"
+        }
+      ]
+    },
+    "code": 59
+  },
+  "unstructuredSS-Request": {
+    "argument": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "ussd-DataCodingScheme",
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1))"
+        },
+        {
+          "name": "ussd-String",
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1..160))"
+        },
+        {
+          "name": "alertingPattern",
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1))",
+          "optional": true
+        },
+        {
+          "name": "msisdn",
+          "tag": 0,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1..9))",
+          "optional": true
+        }
+      ]
+    },
+    "result": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "ussd-DataCodingScheme",
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1))"
+        },
+        {
+          "name": "ussd-String",
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1..160))"
+        }
+      ]
+    },
+    "code": 60
+  },
+  "unstructuredSS-Notify": {
+    "argument": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "ussd-DataCodingScheme",
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1))"
+        },
+        {
+          "name": "ussd-String",
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1..160))"
+        },
+        {
+          "name": "alertingPattern",
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1))",
+          "optional": true
+        },
+        {
+          "name": "msisdn",
+          "tag": 0,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1..9))",
+          "optional": true
+        }
+      ]
+    },
+    "result": {
+      "type": "BOOLEAN",
+      "value": true
+    },
+    "code": 61
+  },
+  "registerPassword": {
+    "argument": {
+      "type": "OCTET STRING",
+      "qualifiers": "(SIZE(1))"
+    },
+    "result": {
+      "type": "NumericString",
+      "qualifiers": "(FROM(\"0\"|\"1\"|\"2\"|\"3\"|\"4\"|\"5\"|\"6\"|\"7\"|\"8\"|\"9\"))"
+    },
+    "code": 17
+  },
+  "getPassword": {
+    "argument": {
+      "type": "ENUMERATED",
+      "values": [
+        {
+          "name": "enterPW",
+          "value": 0
+        },
+        {
+          "name": "enterNewPW",
+          "value": 1
+        },
+        {
+          "name": "enterNewPW-Again",
+          "value": 2
+        }
+      ]
+    },
+    "result": {
+      "type": "NumericString",
+      "qualifiers": "(FROM(\"0\"|\"1\"|\"2\"|\"3\"|\"4\"|\"5\"|\"6\"|\"7\"|\"8\"|\"9\"))"
+    },
+    "code": 18
+  },
+  "ss-InvocationNotification": {
+    "argument": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "imsi",
+          "tag": 0,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(3..8))"
+        },
+        {
+          "name": "msisdn",
+          "tag": 1,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1..9))"
+        },
+        {
+          "name": "ss-Event",
+          "tag": 2,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1))"
+        },
+        {
+          "name": "ss-EventSpecification",
+          "tag": 3,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "qualifiers": "(SIZE(1..2))",
+          "ofElement": {
+            "type": "OCTET STRING",
+            "qualifiers": "(SIZE(1..20))",
+            "length": 25
+          },
+          "optional": true
+        },
+        {
+          "name": "extensionContainer",
+          "tag": 4,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "length": 111,
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "b-subscriberNumber",
+          "tag": 5,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1..9))",
+          "optional": true
+        },
+        {
+          "name": "ccbs-RequestState",
+          "tag": 6,
+          "implicit": true,
+          "type": "ENUMERATED",
+          "values": [
+            {
+              "name": "request",
+              "value": 0
+            },
+            {
+              "name": "recall",
+              "value": 1
+            },
+            {
+              "name": "active",
+              "value": 2
+            },
+            {
+              "name": "completed",
+              "value": 3
+            },
+            {
+              "name": "suspended",
+              "value": 4
+            },
+            {
+              "name": "frozen",
+              "value": 5
+            },
+            {
+              "name": "deleted",
+              "value": 6
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "result": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "length": 111,
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 72
+  },
+  "registerCC-Entry": {
+    "argument": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "ss-Code",
+          "tag": 0,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1))"
+        },
+        {
+          "name": "ccbs-Data",
+          "tag": 1,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "ccbs-Feature",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [
+                {
+                  "name": "ccbs-Index",
+                  "tag": 0,
+                  "implicit": true,
+                  "type": "INTEGER",
+                  "qualifiers": "(1..5)",
+                  "optional": true
+                },
+                {
+                  "name": "b-subscriberNumber",
+                  "tag": 1,
+                  "implicit": true,
+                  "type": "OCTET STRING",
+                  "qualifiers": "(SIZE(1..9))",
+                  "optional": true
+                },
+                {
+                  "name": "b-subscriberSubaddress",
+                  "tag": 2,
+                  "implicit": true,
+                  "type": "OCTET STRING",
+                  "qualifiers": "(SIZE(1..21))",
+                  "optional": true
+                },
+                {
+                  "name": "basicServiceGroup",
+                  "tag": 3,
+                  "type": "CHOICE",
+                  "elements": [
+                    {
+                      "name": "bearerService",
+                      "tag": 2,
+                      "implicit": true,
+                      "type": "OCTET STRING",
+                      "qualifiers": "(SIZE(1))"
+                    },
+                    {
+                      "name": "teleservice",
+                      "tag": 3,
+                      "implicit": true,
+                      "type": "OCTET STRING",
+                      "qualifiers": "(SIZE(1))"
+                    }
+                  ],
+                  "optional": true
+                }
+              ]
+            },
+            {
+              "name": "translatedB-Number",
+              "tag": 1,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1..9))"
+            },
+            {
+              "name": "serviceIndicator",
+              "tag": 2,
+              "implicit": true,
+              "type": "BIT STRING",
+              "qualifiers": "(SIZE(2..32))",
+              "values": [
+                {
+                  "name": "clir-invoked",
+                  "value": 0
+                },
+                {
+                  "name": "camel-invoked",
+                  "value": 1
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "callInfo",
+              "tag": 3,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [
+                {
+                  "name": "protocolId",
+                  "type": "ENUMERATED",
+                  "values": [
+                    {
+                      "name": "gsm-0408",
+                      "value": 1
+                    },
+                    {
+                      "name": "gsm-0806",
+                      "value": 2
+                    },
+                    {
+                      "name": "gsm-BSSMAP",
+                      "value": 3
+                    },
+                    {
+                      "name": "ets-300102-1",
+                      "value": 4
+                    }
+                  ]
+                },
+                {
+                  "name": "signalInfo",
+                  "type": "OCTET STRING",
+                  "qualifiers": "(SIZE(1..200))"
+                },
+                {
+                  "name": "extensionContainer",
+                  "type": "SEQUENCE",
+                  "elements": [
+                    {
+                      "name": "privateExtensionList",
+                      "tag": 0,
+                      "implicit": true,
+                      "type": "SEQUENCE",
+                      "qualifiers": "(SIZE(1..10))",
+                      "ofElement": {
+                        "type": "SEQUENCE",
+                        "length": 111,
+                        "elements": [
+                          {
+                            "name": "extId",
+                            "type": "MAP-EXTENSION",
+                            "qualifiers": ".&extensionId({,...})"
+                          },
+                          {
+                            "name": "extType",
+                            "type": "MAP-EXTENSION",
+                            "qualifiers": ".&ExtensionType({,...}{@extId})",
+                            "optional": true
+                          }
+                        ]
+                      },
+                      "optional": true
+                    },
+                    {
+                      "name": "pcs-Extensions",
+                      "tag": 1,
+                      "implicit": true,
+                      "type": "SEQUENCE",
+                      "elements": [],
+                      "optional": true
+                    }
+                  ],
+                  "optional": true
+                }
+              ]
+            },
+            {
+              "name": "networkSignalInfo",
+              "tag": 4,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [
+                {
+                  "name": "protocolId",
+                  "type": "ENUMERATED",
+                  "values": [
+                    {
+                      "name": "gsm-0408",
+                      "value": 1
+                    },
+                    {
+                      "name": "gsm-0806",
+                      "value": 2
+                    },
+                    {
+                      "name": "gsm-BSSMAP",
+                      "value": 3
+                    },
+                    {
+                      "name": "ets-300102-1",
+                      "value": 4
+                    }
+                  ]
+                },
+                {
+                  "name": "signalInfo",
+                  "type": "OCTET STRING",
+                  "qualifiers": "(SIZE(1..200))"
+                },
+                {
+                  "name": "extensionContainer",
+                  "type": "SEQUENCE",
+                  "elements": [
+                    {
+                      "name": "privateExtensionList",
+                      "tag": 0,
+                      "implicit": true,
+                      "type": "SEQUENCE",
+                      "qualifiers": "(SIZE(1..10))",
+                      "ofElement": {
+                        "type": "SEQUENCE",
+                        "length": 111,
+                        "elements": [
+                          {
+                            "name": "extId",
+                            "type": "MAP-EXTENSION",
+                            "qualifiers": ".&extensionId({,...})"
+                          },
+                          {
+                            "name": "extType",
+                            "type": "MAP-EXTENSION",
+                            "qualifiers": ".&ExtensionType({,...}{@extId})",
+                            "optional": true
+                          }
+                        ]
+                      },
+                      "optional": true
+                    },
+                    {
+                      "name": "pcs-Extensions",
+                      "tag": 1,
+                      "implicit": true,
+                      "type": "SEQUENCE",
+                      "elements": [],
+                      "optional": true
+                    }
+                  ],
+                  "optional": true
+                }
+              ]
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "result": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "ccbs-Feature",
+          "tag": 0,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "ccbs-Index",
+              "tag": 0,
+              "implicit": true,
+              "type": "INTEGER",
+              "qualifiers": "(1..5)",
+              "optional": true
+            },
+            {
+              "name": "b-subscriberNumber",
+              "tag": 1,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1..9))",
+              "optional": true
+            },
+            {
+              "name": "b-subscriberSubaddress",
+              "tag": 2,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1..21))",
+              "optional": true
+            },
+            {
+              "name": "basicServiceGroup",
+              "tag": 3,
+              "type": "CHOICE",
+              "elements": [
+                {
+                  "name": "bearerService",
+                  "tag": 2,
+                  "implicit": true,
+                  "type": "OCTET STRING",
+                  "qualifiers": "(SIZE(1))"
+                },
+                {
+                  "name": "teleservice",
+                  "tag": 3,
+                  "implicit": true,
+                  "type": "OCTET STRING",
+                  "qualifiers": "(SIZE(1))"
+                }
+              ],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 76
+  },
+  "eraseCC-Entry": {
+    "argument": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "ss-Code",
+          "tag": 0,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1))"
+        },
+        {
+          "name": "ccbs-Index",
+          "tag": 1,
+          "implicit": true,
+          "type": "INTEGER",
+          "qualifiers": "(1..5)",
+          "optional": true
+        }
+      ]
+    },
+    "result": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "ss-Code",
+          "tag": 0,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1))"
+        },
+        {
+          "name": "ss-Status",
+          "tag": 1,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1))",
+          "optional": true
+        }
+      ]
+    },
+    "code": 77
+  }
+}

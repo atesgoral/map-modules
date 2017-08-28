@@ -1,0 +1,2619 @@
+{
+  "sendRoutingInfoForLCS": {
+    "argument": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "mlcNumber",
+          "tag": 0,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1..9))"
+        },
+        {
+          "name": "targetMS",
+          "tag": 1,
+          "type": "CHOICE",
+          "elements": [
+            {
+              "name": "imsi",
+              "tag": 0,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(3..8))"
+            },
+            {
+              "name": "msisdn",
+              "tag": 1,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1..9))"
+            }
+          ]
+        },
+        {
+          "name": "extensionContainer",
+          "tag": 2,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "length": 111,
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "result": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "targetMS",
+          "tag": 0,
+          "type": "CHOICE",
+          "elements": [
+            {
+              "name": "imsi",
+              "tag": 0,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(3..8))"
+            },
+            {
+              "name": "msisdn",
+              "tag": 1,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1..9))"
+            }
+          ]
+        },
+        {
+          "name": "lcsLocationInfo",
+          "tag": 1,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "networkNode-Number",
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1..9))"
+            },
+            {
+              "name": "lmsi",
+              "tag": 0,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(4))",
+              "optional": true
+            },
+            {
+              "name": "extensionContainer",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [
+                {
+                  "name": "privateExtensionList",
+                  "tag": 0,
+                  "implicit": true,
+                  "type": "SEQUENCE",
+                  "qualifiers": "(SIZE(1..10))",
+                  "ofElement": {
+                    "type": "SEQUENCE",
+                    "length": 111,
+                    "elements": [
+                      {
+                        "name": "extId",
+                        "type": "MAP-EXTENSION",
+                        "qualifiers": ".&extensionId({,...})"
+                      },
+                      {
+                        "name": "extType",
+                        "type": "MAP-EXTENSION",
+                        "qualifiers": ".&ExtensionType({,...}{@extId})",
+                        "optional": true
+                      }
+                    ]
+                  },
+                  "optional": true
+                },
+                {
+                  "name": "pcs-Extensions",
+                  "tag": 1,
+                  "implicit": true,
+                  "type": "SEQUENCE",
+                  "elements": [],
+                  "optional": true
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "gprsNodeIndicator",
+              "tag": 2,
+              "implicit": true,
+              "type": "NULL",
+              "optional": true
+            },
+            {
+              "name": "additional-Number",
+              "tag": 3,
+              "type": "CHOICE",
+              "elements": [
+                {
+                  "name": "msc-Number",
+                  "tag": 0,
+                  "implicit": true,
+                  "type": "OCTET STRING",
+                  "qualifiers": "(SIZE(1..9))"
+                },
+                {
+                  "name": "sgsn-Number",
+                  "tag": 1,
+                  "implicit": true,
+                  "type": "OCTET STRING",
+                  "qualifiers": "(SIZE(1..9))"
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "supportedLCS-CapabilitySets",
+              "tag": 4,
+              "implicit": true,
+              "type": "BIT STRING",
+              "qualifiers": "(SIZE(2..16))",
+              "values": [
+                {
+                  "name": "lcsCapabilitySet1",
+                  "value": 0
+                },
+                {
+                  "name": "lcsCapabilitySet2",
+                  "value": 1
+                },
+                {
+                  "name": "lcsCapabilitySet3",
+                  "value": 2
+                },
+                {
+                  "name": "lcsCapabilitySet4",
+                  "value": 3
+                },
+                {
+                  "name": "lcsCapabilitySet5",
+                  "value": 4
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "additional-LCS-CapabilitySets",
+              "tag": 5,
+              "implicit": true,
+              "type": "BIT STRING",
+              "qualifiers": "(SIZE(2..16))",
+              "values": [
+                {
+                  "name": "lcsCapabilitySet1",
+                  "value": 0
+                },
+                {
+                  "name": "lcsCapabilitySet2",
+                  "value": 1
+                },
+                {
+                  "name": "lcsCapabilitySet3",
+                  "value": 2
+                },
+                {
+                  "name": "lcsCapabilitySet4",
+                  "value": 3
+                },
+                {
+                  "name": "lcsCapabilitySet5",
+                  "value": 4
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "mme-Name",
+              "tag": 6,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(9..255))",
+              "optional": true
+            },
+            {
+              "name": "aaa-Server-Name",
+              "tag": 8,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(9..255))",
+              "optional": true
+            },
+            {
+              "name": "sgsn-Name",
+              "tag": 9,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(9..255))",
+              "optional": true
+            },
+            {
+              "name": "sgsn-Realm",
+              "tag": 10,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(9..255))",
+              "optional": true
+            }
+          ]
+        },
+        {
+          "name": "extensionContainer",
+          "tag": 2,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "length": 111,
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "v-gmlc-Address",
+          "tag": 3,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(5..17))",
+          "optional": true
+        },
+        {
+          "name": "h-gmlc-Address",
+          "tag": 4,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(5..17))",
+          "optional": true
+        },
+        {
+          "name": "ppr-Address",
+          "tag": 5,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(5..17))",
+          "optional": true
+        },
+        {
+          "name": "additional-v-gmlc-Address",
+          "tag": 6,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(5..17))",
+          "optional": true
+        }
+      ]
+    },
+    "code": 85
+  },
+  "provideSubscriberLocation": {
+    "argument": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "locationType",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "locationEstimateType",
+              "tag": 0,
+              "implicit": true,
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "currentLocation",
+                  "value": 0
+                },
+                {
+                  "name": "currentOrLastKnownLocation",
+                  "value": 1
+                },
+                {
+                  "name": "initialLocation",
+                  "value": 2
+                },
+                {
+                  "name": "activateDeferredLocation",
+                  "value": 3
+                },
+                {
+                  "name": "cancelDeferredLocation",
+                  "value": 4
+                },
+                {
+                  "name": "notificationVerificationOnly",
+                  "value": 5
+                }
+              ]
+            },
+            {
+              "name": "deferredLocationEventType",
+              "tag": 1,
+              "implicit": true,
+              "type": "BIT STRING",
+              "qualifiers": "(SIZE(1..16))",
+              "values": [
+                {
+                  "name": "msAvailable",
+                  "value": 0
+                },
+                {
+                  "name": "enteringIntoArea",
+                  "value": 1
+                },
+                {
+                  "name": "leavingFromArea",
+                  "value": 2
+                },
+                {
+                  "name": "beingInsideArea",
+                  "value": 3
+                },
+                {
+                  "name": "periodicLDR",
+                  "value": 4
+                }
+              ],
+              "optional": true
+            }
+          ]
+        },
+        {
+          "name": "mlc-Number",
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1..9))"
+        },
+        {
+          "name": "lcs-ClientID",
+          "tag": 0,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "lcsClientType",
+              "tag": 0,
+              "implicit": true,
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "emergencyServices",
+                  "value": 0
+                },
+                {
+                  "name": "valueAddedServices",
+                  "value": 1
+                },
+                {
+                  "name": "plmnOperatorServices",
+                  "value": 2
+                },
+                {
+                  "name": "lawfulInterceptServices",
+                  "value": 3
+                }
+              ]
+            },
+            {
+              "name": "lcsClientExternalID",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [
+                {
+                  "name": "externalAddress",
+                  "tag": 0,
+                  "implicit": true,
+                  "type": "OCTET STRING",
+                  "qualifiers": "(SIZE(1..9))",
+                  "optional": true
+                },
+                {
+                  "name": "extensionContainer",
+                  "tag": 1,
+                  "implicit": true,
+                  "type": "SEQUENCE",
+                  "elements": [
+                    {
+                      "name": "privateExtensionList",
+                      "tag": 0,
+                      "implicit": true,
+                      "type": "SEQUENCE",
+                      "qualifiers": "(SIZE(1..10))",
+                      "ofElement": {
+                        "type": "SEQUENCE",
+                        "length": 111,
+                        "elements": [
+                          {
+                            "name": "extId",
+                            "type": "MAP-EXTENSION",
+                            "qualifiers": ".&extensionId({,...})"
+                          },
+                          {
+                            "name": "extType",
+                            "type": "MAP-EXTENSION",
+                            "qualifiers": ".&ExtensionType({,...}{@extId})",
+                            "optional": true
+                          }
+                        ]
+                      },
+                      "optional": true
+                    },
+                    {
+                      "name": "pcs-Extensions",
+                      "tag": 1,
+                      "implicit": true,
+                      "type": "SEQUENCE",
+                      "elements": [],
+                      "optional": true
+                    }
+                  ],
+                  "optional": true
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "lcsClientDialedByMS",
+              "tag": 2,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1..20))",
+              "optional": true
+            },
+            {
+              "name": "lcsClientInternalID",
+              "tag": 3,
+              "implicit": true,
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "broadcastService",
+                  "value": 0
+                },
+                {
+                  "name": "o-andM-HPLMN",
+                  "value": 1
+                },
+                {
+                  "name": "o-andM-VPLMN",
+                  "value": 2
+                },
+                {
+                  "name": "anonymousLocation",
+                  "value": 3
+                },
+                {
+                  "name": "targetMSsubscribedService",
+                  "value": 4
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "lcsClientName",
+              "tag": 4,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [
+                {
+                  "name": "dataCodingScheme",
+                  "tag": 0,
+                  "implicit": true,
+                  "type": "OCTET STRING",
+                  "qualifiers": "(SIZE(1))"
+                },
+                {
+                  "name": "nameString",
+                  "tag": 2,
+                  "implicit": true,
+                  "type": "OCTET STRING",
+                  "qualifiers": "(SIZE(1..63))"
+                },
+                {
+                  "name": "lcs-FormatIndicator",
+                  "tag": 3,
+                  "implicit": true,
+                  "type": "ENUMERATED",
+                  "values": [
+                    {
+                      "name": "logicalName",
+                      "value": 0
+                    },
+                    {
+                      "name": "e-mailAddress",
+                      "value": 1
+                    },
+                    {
+                      "name": "msisdn",
+                      "value": 2
+                    },
+                    {
+                      "name": "url",
+                      "value": 3
+                    },
+                    {
+                      "name": "sipUrl",
+                      "value": 4
+                    }
+                  ],
+                  "optional": true
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "lcsAPN",
+              "tag": 5,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(2..63))",
+              "optional": true
+            },
+            {
+              "name": "lcsRequestorID",
+              "tag": 6,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [
+                {
+                  "name": "dataCodingScheme",
+                  "tag": 0,
+                  "implicit": true,
+                  "type": "OCTET STRING",
+                  "qualifiers": "(SIZE(1))"
+                },
+                {
+                  "name": "requestorIDString",
+                  "tag": 1,
+                  "implicit": true,
+                  "type": "OCTET STRING",
+                  "qualifiers": "(SIZE(1..63))"
+                },
+                {
+                  "name": "lcs-FormatIndicator",
+                  "tag": 2,
+                  "implicit": true,
+                  "type": "ENUMERATED",
+                  "values": [
+                    {
+                      "name": "logicalName",
+                      "value": 0
+                    },
+                    {
+                      "name": "e-mailAddress",
+                      "value": 1
+                    },
+                    {
+                      "name": "msisdn",
+                      "value": 2
+                    },
+                    {
+                      "name": "url",
+                      "value": 3
+                    },
+                    {
+                      "name": "sipUrl",
+                      "value": 4
+                    }
+                  ],
+                  "optional": true
+                }
+              ],
+              "optional": true
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "privacyOverride",
+          "tag": 1,
+          "implicit": true,
+          "type": "NULL",
+          "optional": true
+        },
+        {
+          "name": "imsi",
+          "tag": 2,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(3..8))",
+          "optional": true
+        },
+        {
+          "name": "msisdn",
+          "tag": 3,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1..9))",
+          "optional": true
+        },
+        {
+          "name": "lmsi",
+          "tag": 4,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(4))",
+          "optional": true
+        },
+        {
+          "name": "imei",
+          "tag": 5,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(8))",
+          "optional": true
+        },
+        {
+          "name": "lcs-Priority",
+          "tag": 6,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1))",
+          "optional": true
+        },
+        {
+          "name": "lcs-QoS",
+          "tag": 7,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "horizontal-accuracy",
+              "tag": 0,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1))",
+              "optional": true
+            },
+            {
+              "name": "verticalCoordinateRequest",
+              "tag": 1,
+              "implicit": true,
+              "type": "NULL",
+              "optional": true
+            },
+            {
+              "name": "vertical-accuracy",
+              "tag": 2,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1))",
+              "optional": true
+            },
+            {
+              "name": "responseTime",
+              "tag": 3,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [
+                {
+                  "name": "responseTimeCategory",
+                  "type": "ENUMERATED",
+                  "values": [
+                    {
+                      "name": "lowdelay",
+                      "value": 0
+                    },
+                    {
+                      "name": "delaytolerant",
+                      "value": 1
+                    }
+                  ]
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "extensionContainer",
+              "tag": 4,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [
+                {
+                  "name": "privateExtensionList",
+                  "tag": 0,
+                  "implicit": true,
+                  "type": "SEQUENCE",
+                  "qualifiers": "(SIZE(1..10))",
+                  "ofElement": {
+                    "type": "SEQUENCE",
+                    "length": 111,
+                    "elements": [
+                      {
+                        "name": "extId",
+                        "type": "MAP-EXTENSION",
+                        "qualifiers": ".&extensionId({,...})"
+                      },
+                      {
+                        "name": "extType",
+                        "type": "MAP-EXTENSION",
+                        "qualifiers": ".&ExtensionType({,...}{@extId})",
+                        "optional": true
+                      }
+                    ]
+                  },
+                  "optional": true
+                },
+                {
+                  "name": "pcs-Extensions",
+                  "tag": 1,
+                  "implicit": true,
+                  "type": "SEQUENCE",
+                  "elements": [],
+                  "optional": true
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "velocityRequest",
+              "tag": 5,
+              "implicit": true,
+              "type": "NULL",
+              "optional": true
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "extensionContainer",
+          "tag": 8,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "length": 111,
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "supportedGADShapes",
+          "tag": 9,
+          "implicit": true,
+          "type": "BIT STRING",
+          "qualifiers": "(SIZE(7..16))",
+          "values": [
+            {
+              "name": "ellipsoidPoint",
+              "value": 0
+            },
+            {
+              "name": "ellipsoidPointWithUncertaintyCircle",
+              "value": 1
+            },
+            {
+              "name": "ellipsoidPointWithUncertaintyEllipse",
+              "value": 2
+            },
+            {
+              "name": "polygon",
+              "value": 3
+            },
+            {
+              "name": "ellipsoidPointWithAltitude",
+              "value": 4
+            },
+            {
+              "name": "ellipsoidPointWithAltitudeAndUncertaintyElipsoid",
+              "value": 5
+            },
+            {
+              "name": "ellipsoidArc",
+              "value": 6
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "lcs-ReferenceNumber",
+          "tag": 10,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1))",
+          "optional": true
+        },
+        {
+          "name": "lcsServiceTypeID",
+          "tag": 11,
+          "implicit": true,
+          "type": "INTEGER",
+          "qualifiers": "(0..127)",
+          "optional": true
+        },
+        {
+          "name": "lcsCodeword",
+          "tag": 12,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "dataCodingScheme",
+              "tag": 0,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1))"
+            },
+            {
+              "name": "lcsCodewordString",
+              "tag": 1,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1..20))"
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "lcs-PrivacyCheck",
+          "tag": 13,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "callSessionUnrelated",
+              "tag": 0,
+              "implicit": true,
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "allowedWithoutNotification",
+                  "value": 0
+                },
+                {
+                  "name": "allowedWithNotification",
+                  "value": 1
+                },
+                {
+                  "name": "allowedIfNoResponse",
+                  "value": 2
+                },
+                {
+                  "name": "restrictedIfNoResponse",
+                  "value": 3
+                },
+                {
+                  "name": "notAllowed",
+                  "value": 4
+                }
+              ]
+            },
+            {
+              "name": "callSessionRelated",
+              "tag": 1,
+              "implicit": true,
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "allowedWithoutNotification",
+                  "value": 0
+                },
+                {
+                  "name": "allowedWithNotification",
+                  "value": 1
+                },
+                {
+                  "name": "allowedIfNoResponse",
+                  "value": 2
+                },
+                {
+                  "name": "restrictedIfNoResponse",
+                  "value": 3
+                },
+                {
+                  "name": "notAllowed",
+                  "value": 4
+                }
+              ],
+              "optional": true
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "areaEventInfo",
+          "tag": 14,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "areaDefinition",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [
+                {
+                  "name": "areaList",
+                  "tag": 0,
+                  "implicit": true,
+                  "type": "SEQUENCE",
+                  "qualifiers": "(SIZE(1..10))",
+                  "ofElement": {
+                    "type": "SEQUENCE",
+                    "length": 195,
+                    "elements": [
+                      {
+                        "name": "areaType",
+                        "tag": 0,
+                        "implicit": true,
+                        "type": "ENUMERATED",
+                        "values": [
+                          {
+                            "name": "countryCode",
+                            "value": 0
+                          },
+                          {
+                            "name": "plmnId",
+                            "value": 1
+                          },
+                          {
+                            "name": "locationAreaId",
+                            "value": 2
+                          },
+                          {
+                            "name": "routingAreaId",
+                            "value": 3
+                          },
+                          {
+                            "name": "cellGlobalId",
+                            "value": 4
+                          },
+                          {
+                            "name": "utranCellId",
+                            "value": 5
+                          }
+                        ]
+                      },
+                      {
+                        "name": "areaIdentification",
+                        "tag": 1,
+                        "implicit": true,
+                        "type": "OCTET STRING",
+                        "qualifiers": "(SIZE(2..7))"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "occurrenceInfo",
+              "tag": 1,
+              "implicit": true,
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "oneTimeEvent",
+                  "value": 0
+                },
+                {
+                  "name": "multipleTimeEvent",
+                  "value": 1
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "intervalTime",
+              "tag": 2,
+              "implicit": true,
+              "type": "INTEGER",
+              "qualifiers": "(1..32767)",
+              "optional": true
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "h-gmlc-Address",
+          "tag": 15,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(5..17))",
+          "optional": true
+        },
+        {
+          "name": "mo-lrShortCircuitIndicator",
+          "tag": 16,
+          "implicit": true,
+          "type": "NULL",
+          "optional": true
+        },
+        {
+          "name": "periodicLDRInfo",
+          "tag": 17,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "reportingAmount",
+              "type": "INTEGER",
+              "qualifiers": "(1..8639999)"
+            },
+            {
+              "name": "reportingInterval",
+              "type": "INTEGER",
+              "qualifiers": "(1..8639999)"
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "reportingPLMNList",
+          "tag": 18,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "plmn-ListPrioritized",
+              "tag": 0,
+              "implicit": true,
+              "type": "NULL",
+              "optional": true
+            },
+            {
+              "name": "plmn-List",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..20))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "length": 172,
+                "elements": [
+                  {
+                    "name": "plmn-Id",
+                    "tag": 0,
+                    "implicit": true,
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(3))"
+                  },
+                  {
+                    "name": "ran-Technology",
+                    "tag": 1,
+                    "implicit": true,
+                    "type": "ENUMERATED",
+                    "values": [
+                      {
+                        "name": "gsm",
+                        "value": 0
+                      },
+                      {
+                        "name": "umts",
+                        "value": 1
+                      }
+                    ],
+                    "optional": true
+                  },
+                  {
+                    "name": "ran-PeriodicLocationSupport",
+                    "tag": 2,
+                    "implicit": true,
+                    "type": "NULL",
+                    "optional": true
+                  }
+                ]
+              }
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "result": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "locationEstimate",
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1..20))"
+        },
+        {
+          "name": "ageOfLocationEstimate",
+          "tag": 0,
+          "implicit": true,
+          "type": "INTEGER",
+          "qualifiers": "(0..32767)",
+          "optional": true
+        },
+        {
+          "name": "extensionContainer",
+          "tag": 1,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "length": 111,
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "add-LocationEstimate",
+          "tag": 2,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1..91))",
+          "optional": true
+        },
+        {
+          "name": "deferredmt-lrResponseIndicator",
+          "tag": 3,
+          "implicit": true,
+          "type": "NULL",
+          "optional": true
+        },
+        {
+          "name": "geranPositioningData",
+          "tag": 4,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(2..10))",
+          "optional": true
+        },
+        {
+          "name": "utranPositioningData",
+          "tag": 5,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(3..11))",
+          "optional": true
+        },
+        {
+          "name": "cellIdOrSai",
+          "tag": 6,
+          "type": "CHOICE",
+          "elements": [
+            {
+              "name": "cellGlobalIdOrServiceAreaIdFixedLength",
+              "tag": 0,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(7))"
+            },
+            {
+              "name": "laiFixedLength",
+              "tag": 1,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(5))"
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "sai-Present",
+          "tag": 7,
+          "implicit": true,
+          "type": "NULL",
+          "optional": true
+        },
+        {
+          "name": "accuracyFulfilmentIndicator",
+          "tag": 8,
+          "implicit": true,
+          "type": "ENUMERATED",
+          "values": [
+            {
+              "name": "requestedAccuracyFulfilled",
+              "value": 0
+            },
+            {
+              "name": "requestedAccuracyNotFulfilled",
+              "value": 1
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "velocityEstimate",
+          "tag": 9,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(4..7))",
+          "optional": true
+        },
+        {
+          "name": "mo-lrShortCircuitIndicator",
+          "tag": 10,
+          "implicit": true,
+          "type": "NULL",
+          "optional": true
+        },
+        {
+          "name": "geranGANSSpositioningData",
+          "tag": 11,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(2..10))",
+          "optional": true
+        },
+        {
+          "name": "utranGANSSpositioningData",
+          "tag": 12,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1..9))",
+          "optional": true
+        },
+        {
+          "name": "targetServingNodeForHandover",
+          "tag": 13,
+          "type": "CHOICE",
+          "elements": [
+            {
+              "name": "msc-Number",
+              "tag": 0,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1..9))"
+            },
+            {
+              "name": "sgsn-Number",
+              "tag": 1,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1..9))"
+            },
+            {
+              "name": "mme-Number",
+              "tag": 2,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(9..255))"
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "utranAdditionalPositioningData",
+          "tag": 14,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1..8))",
+          "optional": true
+        },
+        {
+          "name": "utranBaroPressureMeas",
+          "tag": 15,
+          "implicit": true,
+          "type": "INTEGER",
+          "qualifiers": "(30000..115000)",
+          "optional": true
+        },
+        {
+          "name": "utranCivicAddress",
+          "tag": 16,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "optional": true
+        }
+      ]
+    },
+    "code": 83
+  },
+  "subscriberLocationReport": {
+    "argument": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "lcs-Event",
+          "type": "ENUMERATED",
+          "values": [
+            {
+              "name": "emergencyCallOrigination",
+              "value": 0
+            },
+            {
+              "name": "emergencyCallRelease",
+              "value": 1
+            },
+            {
+              "name": "mo-lr",
+              "value": 2
+            },
+            {
+              "name": "deferredmt-lrResponse",
+              "value": 3
+            },
+            {
+              "name": "deferredmo-lrTTTPInitiation",
+              "value": 4
+            },
+            {
+              "name": "emergencyCallHandover",
+              "value": 5
+            }
+          ]
+        },
+        {
+          "name": "lcs-ClientID",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "lcsClientType",
+              "tag": 0,
+              "implicit": true,
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "emergencyServices",
+                  "value": 0
+                },
+                {
+                  "name": "valueAddedServices",
+                  "value": 1
+                },
+                {
+                  "name": "plmnOperatorServices",
+                  "value": 2
+                },
+                {
+                  "name": "lawfulInterceptServices",
+                  "value": 3
+                }
+              ]
+            },
+            {
+              "name": "lcsClientExternalID",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [
+                {
+                  "name": "externalAddress",
+                  "tag": 0,
+                  "implicit": true,
+                  "type": "OCTET STRING",
+                  "qualifiers": "(SIZE(1..9))",
+                  "optional": true
+                },
+                {
+                  "name": "extensionContainer",
+                  "tag": 1,
+                  "implicit": true,
+                  "type": "SEQUENCE",
+                  "elements": [
+                    {
+                      "name": "privateExtensionList",
+                      "tag": 0,
+                      "implicit": true,
+                      "type": "SEQUENCE",
+                      "qualifiers": "(SIZE(1..10))",
+                      "ofElement": {
+                        "type": "SEQUENCE",
+                        "length": 111,
+                        "elements": [
+                          {
+                            "name": "extId",
+                            "type": "MAP-EXTENSION",
+                            "qualifiers": ".&extensionId({,...})"
+                          },
+                          {
+                            "name": "extType",
+                            "type": "MAP-EXTENSION",
+                            "qualifiers": ".&ExtensionType({,...}{@extId})",
+                            "optional": true
+                          }
+                        ]
+                      },
+                      "optional": true
+                    },
+                    {
+                      "name": "pcs-Extensions",
+                      "tag": 1,
+                      "implicit": true,
+                      "type": "SEQUENCE",
+                      "elements": [],
+                      "optional": true
+                    }
+                  ],
+                  "optional": true
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "lcsClientDialedByMS",
+              "tag": 2,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1..20))",
+              "optional": true
+            },
+            {
+              "name": "lcsClientInternalID",
+              "tag": 3,
+              "implicit": true,
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "broadcastService",
+                  "value": 0
+                },
+                {
+                  "name": "o-andM-HPLMN",
+                  "value": 1
+                },
+                {
+                  "name": "o-andM-VPLMN",
+                  "value": 2
+                },
+                {
+                  "name": "anonymousLocation",
+                  "value": 3
+                },
+                {
+                  "name": "targetMSsubscribedService",
+                  "value": 4
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "lcsClientName",
+              "tag": 4,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [
+                {
+                  "name": "dataCodingScheme",
+                  "tag": 0,
+                  "implicit": true,
+                  "type": "OCTET STRING",
+                  "qualifiers": "(SIZE(1))"
+                },
+                {
+                  "name": "nameString",
+                  "tag": 2,
+                  "implicit": true,
+                  "type": "OCTET STRING",
+                  "qualifiers": "(SIZE(1..63))"
+                },
+                {
+                  "name": "lcs-FormatIndicator",
+                  "tag": 3,
+                  "implicit": true,
+                  "type": "ENUMERATED",
+                  "values": [
+                    {
+                      "name": "logicalName",
+                      "value": 0
+                    },
+                    {
+                      "name": "e-mailAddress",
+                      "value": 1
+                    },
+                    {
+                      "name": "msisdn",
+                      "value": 2
+                    },
+                    {
+                      "name": "url",
+                      "value": 3
+                    },
+                    {
+                      "name": "sipUrl",
+                      "value": 4
+                    }
+                  ],
+                  "optional": true
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "lcsAPN",
+              "tag": 5,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(2..63))",
+              "optional": true
+            },
+            {
+              "name": "lcsRequestorID",
+              "tag": 6,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [
+                {
+                  "name": "dataCodingScheme",
+                  "tag": 0,
+                  "implicit": true,
+                  "type": "OCTET STRING",
+                  "qualifiers": "(SIZE(1))"
+                },
+                {
+                  "name": "requestorIDString",
+                  "tag": 1,
+                  "implicit": true,
+                  "type": "OCTET STRING",
+                  "qualifiers": "(SIZE(1..63))"
+                },
+                {
+                  "name": "lcs-FormatIndicator",
+                  "tag": 2,
+                  "implicit": true,
+                  "type": "ENUMERATED",
+                  "values": [
+                    {
+                      "name": "logicalName",
+                      "value": 0
+                    },
+                    {
+                      "name": "e-mailAddress",
+                      "value": 1
+                    },
+                    {
+                      "name": "msisdn",
+                      "value": 2
+                    },
+                    {
+                      "name": "url",
+                      "value": 3
+                    },
+                    {
+                      "name": "sipUrl",
+                      "value": 4
+                    }
+                  ],
+                  "optional": true
+                }
+              ],
+              "optional": true
+            }
+          ]
+        },
+        {
+          "name": "lcsLocationInfo",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "networkNode-Number",
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1..9))"
+            },
+            {
+              "name": "lmsi",
+              "tag": 0,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(4))",
+              "optional": true
+            },
+            {
+              "name": "extensionContainer",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [
+                {
+                  "name": "privateExtensionList",
+                  "tag": 0,
+                  "implicit": true,
+                  "type": "SEQUENCE",
+                  "qualifiers": "(SIZE(1..10))",
+                  "ofElement": {
+                    "type": "SEQUENCE",
+                    "length": 111,
+                    "elements": [
+                      {
+                        "name": "extId",
+                        "type": "MAP-EXTENSION",
+                        "qualifiers": ".&extensionId({,...})"
+                      },
+                      {
+                        "name": "extType",
+                        "type": "MAP-EXTENSION",
+                        "qualifiers": ".&ExtensionType({,...}{@extId})",
+                        "optional": true
+                      }
+                    ]
+                  },
+                  "optional": true
+                },
+                {
+                  "name": "pcs-Extensions",
+                  "tag": 1,
+                  "implicit": true,
+                  "type": "SEQUENCE",
+                  "elements": [],
+                  "optional": true
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "gprsNodeIndicator",
+              "tag": 2,
+              "implicit": true,
+              "type": "NULL",
+              "optional": true
+            },
+            {
+              "name": "additional-Number",
+              "tag": 3,
+              "type": "CHOICE",
+              "elements": [
+                {
+                  "name": "msc-Number",
+                  "tag": 0,
+                  "implicit": true,
+                  "type": "OCTET STRING",
+                  "qualifiers": "(SIZE(1..9))"
+                },
+                {
+                  "name": "sgsn-Number",
+                  "tag": 1,
+                  "implicit": true,
+                  "type": "OCTET STRING",
+                  "qualifiers": "(SIZE(1..9))"
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "supportedLCS-CapabilitySets",
+              "tag": 4,
+              "implicit": true,
+              "type": "BIT STRING",
+              "qualifiers": "(SIZE(2..16))",
+              "values": [
+                {
+                  "name": "lcsCapabilitySet1",
+                  "value": 0
+                },
+                {
+                  "name": "lcsCapabilitySet2",
+                  "value": 1
+                },
+                {
+                  "name": "lcsCapabilitySet3",
+                  "value": 2
+                },
+                {
+                  "name": "lcsCapabilitySet4",
+                  "value": 3
+                },
+                {
+                  "name": "lcsCapabilitySet5",
+                  "value": 4
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "additional-LCS-CapabilitySets",
+              "tag": 5,
+              "implicit": true,
+              "type": "BIT STRING",
+              "qualifiers": "(SIZE(2..16))",
+              "values": [
+                {
+                  "name": "lcsCapabilitySet1",
+                  "value": 0
+                },
+                {
+                  "name": "lcsCapabilitySet2",
+                  "value": 1
+                },
+                {
+                  "name": "lcsCapabilitySet3",
+                  "value": 2
+                },
+                {
+                  "name": "lcsCapabilitySet4",
+                  "value": 3
+                },
+                {
+                  "name": "lcsCapabilitySet5",
+                  "value": 4
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "mme-Name",
+              "tag": 6,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(9..255))",
+              "optional": true
+            },
+            {
+              "name": "aaa-Server-Name",
+              "tag": 8,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(9..255))",
+              "optional": true
+            },
+            {
+              "name": "sgsn-Name",
+              "tag": 9,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(9..255))",
+              "optional": true
+            },
+            {
+              "name": "sgsn-Realm",
+              "tag": 10,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(9..255))",
+              "optional": true
+            }
+          ]
+        },
+        {
+          "name": "msisdn",
+          "tag": 0,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1..9))",
+          "optional": true
+        },
+        {
+          "name": "imsi",
+          "tag": 1,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(3..8))",
+          "optional": true
+        },
+        {
+          "name": "imei",
+          "tag": 2,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(8))",
+          "optional": true
+        },
+        {
+          "name": "na-ESRD",
+          "tag": 3,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1..9))",
+          "optional": true
+        },
+        {
+          "name": "na-ESRK",
+          "tag": 4,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1..9))",
+          "optional": true
+        },
+        {
+          "name": "locationEstimate",
+          "tag": 5,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1..20))",
+          "optional": true
+        },
+        {
+          "name": "ageOfLocationEstimate",
+          "tag": 6,
+          "implicit": true,
+          "type": "INTEGER",
+          "qualifiers": "(0..32767)",
+          "optional": true
+        },
+        {
+          "name": "slr-ArgExtensionContainer",
+          "tag": 7,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "length": 111,
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "slr-Arg-PCS-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [
+                {
+                  "name": "na-ESRK-Request",
+                  "tag": 0,
+                  "implicit": true,
+                  "type": "NULL",
+                  "optional": true
+                }
+              ],
+              "optional": true
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "add-LocationEstimate",
+          "tag": 8,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1..91))",
+          "optional": true
+        },
+        {
+          "name": "deferredmt-lrData",
+          "tag": 9,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "deferredLocationEventType",
+              "type": "BIT STRING",
+              "qualifiers": "(SIZE(1..16))",
+              "values": [
+                {
+                  "name": "msAvailable",
+                  "value": 0
+                },
+                {
+                  "name": "enteringIntoArea",
+                  "value": 1
+                },
+                {
+                  "name": "leavingFromArea",
+                  "value": 2
+                },
+                {
+                  "name": "beingInsideArea",
+                  "value": 3
+                },
+                {
+                  "name": "periodicLDR",
+                  "value": 4
+                }
+              ]
+            },
+            {
+              "name": "terminationCause",
+              "tag": 0,
+              "implicit": true,
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "normal",
+                  "value": 0
+                },
+                {
+                  "name": "errorundefined",
+                  "value": 1
+                },
+                {
+                  "name": "internalTimeout",
+                  "value": 2
+                },
+                {
+                  "name": "congestion",
+                  "value": 3
+                },
+                {
+                  "name": "mt-lrRestart",
+                  "value": 4
+                },
+                {
+                  "name": "privacyViolation",
+                  "value": 5
+                },
+                {
+                  "name": "shapeOfLocationEstimateNotSupported",
+                  "value": 6
+                },
+                {
+                  "name": "subscriberTermination",
+                  "value": 7
+                },
+                {
+                  "name": "uETermination",
+                  "value": 8
+                },
+                {
+                  "name": "networkTermination",
+                  "value": 9
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "lcsLocationInfo",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [
+                {
+                  "name": "networkNode-Number",
+                  "type": "OCTET STRING",
+                  "qualifiers": "(SIZE(1..9))"
+                },
+                {
+                  "name": "lmsi",
+                  "tag": 0,
+                  "implicit": true,
+                  "type": "OCTET STRING",
+                  "qualifiers": "(SIZE(4))",
+                  "optional": true
+                },
+                {
+                  "name": "extensionContainer",
+                  "tag": 1,
+                  "implicit": true,
+                  "type": "SEQUENCE",
+                  "elements": [
+                    {
+                      "name": "privateExtensionList",
+                      "tag": 0,
+                      "implicit": true,
+                      "type": "SEQUENCE",
+                      "qualifiers": "(SIZE(1..10))",
+                      "ofElement": {
+                        "type": "SEQUENCE",
+                        "length": 111,
+                        "elements": [
+                          {
+                            "name": "extId",
+                            "type": "MAP-EXTENSION",
+                            "qualifiers": ".&extensionId({,...})"
+                          },
+                          {
+                            "name": "extType",
+                            "type": "MAP-EXTENSION",
+                            "qualifiers": ".&ExtensionType({,...}{@extId})",
+                            "optional": true
+                          }
+                        ]
+                      },
+                      "optional": true
+                    },
+                    {
+                      "name": "pcs-Extensions",
+                      "tag": 1,
+                      "implicit": true,
+                      "type": "SEQUENCE",
+                      "elements": [],
+                      "optional": true
+                    }
+                  ],
+                  "optional": true
+                },
+                {
+                  "name": "gprsNodeIndicator",
+                  "tag": 2,
+                  "implicit": true,
+                  "type": "NULL",
+                  "optional": true
+                },
+                {
+                  "name": "additional-Number",
+                  "tag": 3,
+                  "type": "CHOICE",
+                  "elements": [
+                    {
+                      "name": "msc-Number",
+                      "tag": 0,
+                      "implicit": true,
+                      "type": "OCTET STRING",
+                      "qualifiers": "(SIZE(1..9))"
+                    },
+                    {
+                      "name": "sgsn-Number",
+                      "tag": 1,
+                      "implicit": true,
+                      "type": "OCTET STRING",
+                      "qualifiers": "(SIZE(1..9))"
+                    }
+                  ],
+                  "optional": true
+                },
+                {
+                  "name": "supportedLCS-CapabilitySets",
+                  "tag": 4,
+                  "implicit": true,
+                  "type": "BIT STRING",
+                  "qualifiers": "(SIZE(2..16))",
+                  "values": [
+                    {
+                      "name": "lcsCapabilitySet1",
+                      "value": 0
+                    },
+                    {
+                      "name": "lcsCapabilitySet2",
+                      "value": 1
+                    },
+                    {
+                      "name": "lcsCapabilitySet3",
+                      "value": 2
+                    },
+                    {
+                      "name": "lcsCapabilitySet4",
+                      "value": 3
+                    },
+                    {
+                      "name": "lcsCapabilitySet5",
+                      "value": 4
+                    }
+                  ],
+                  "optional": true
+                },
+                {
+                  "name": "additional-LCS-CapabilitySets",
+                  "tag": 5,
+                  "implicit": true,
+                  "type": "BIT STRING",
+                  "qualifiers": "(SIZE(2..16))",
+                  "values": [
+                    {
+                      "name": "lcsCapabilitySet1",
+                      "value": 0
+                    },
+                    {
+                      "name": "lcsCapabilitySet2",
+                      "value": 1
+                    },
+                    {
+                      "name": "lcsCapabilitySet3",
+                      "value": 2
+                    },
+                    {
+                      "name": "lcsCapabilitySet4",
+                      "value": 3
+                    },
+                    {
+                      "name": "lcsCapabilitySet5",
+                      "value": 4
+                    }
+                  ],
+                  "optional": true
+                },
+                {
+                  "name": "mme-Name",
+                  "tag": 6,
+                  "implicit": true,
+                  "type": "OCTET STRING",
+                  "qualifiers": "(SIZE(9..255))",
+                  "optional": true
+                },
+                {
+                  "name": "aaa-Server-Name",
+                  "tag": 8,
+                  "implicit": true,
+                  "type": "OCTET STRING",
+                  "qualifiers": "(SIZE(9..255))",
+                  "optional": true
+                },
+                {
+                  "name": "sgsn-Name",
+                  "tag": 9,
+                  "implicit": true,
+                  "type": "OCTET STRING",
+                  "qualifiers": "(SIZE(9..255))",
+                  "optional": true
+                },
+                {
+                  "name": "sgsn-Realm",
+                  "tag": 10,
+                  "implicit": true,
+                  "type": "OCTET STRING",
+                  "qualifiers": "(SIZE(9..255))",
+                  "optional": true
+                }
+              ],
+              "optional": true
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "lcs-ReferenceNumber",
+          "tag": 10,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1))",
+          "optional": true
+        },
+        {
+          "name": "geranPositioningData",
+          "tag": 11,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(2..10))",
+          "optional": true
+        },
+        {
+          "name": "utranPositioningData",
+          "tag": 12,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(3..11))",
+          "optional": true
+        },
+        {
+          "name": "cellIdOrSai",
+          "tag": 13,
+          "type": "CHOICE",
+          "elements": [
+            {
+              "name": "cellGlobalIdOrServiceAreaIdFixedLength",
+              "tag": 0,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(7))"
+            },
+            {
+              "name": "laiFixedLength",
+              "tag": 1,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(5))"
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "h-gmlc-Address",
+          "tag": 14,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(5..17))",
+          "optional": true
+        },
+        {
+          "name": "lcsServiceTypeID",
+          "tag": 15,
+          "implicit": true,
+          "type": "INTEGER",
+          "qualifiers": "(0..127)",
+          "optional": true
+        },
+        {
+          "name": "sai-Present",
+          "tag": 17,
+          "implicit": true,
+          "type": "NULL",
+          "optional": true
+        },
+        {
+          "name": "pseudonymIndicator",
+          "tag": 18,
+          "implicit": true,
+          "type": "NULL",
+          "optional": true
+        },
+        {
+          "name": "accuracyFulfilmentIndicator",
+          "tag": 19,
+          "implicit": true,
+          "type": "ENUMERATED",
+          "values": [
+            {
+              "name": "requestedAccuracyFulfilled",
+              "value": 0
+            },
+            {
+              "name": "requestedAccuracyNotFulfilled",
+              "value": 1
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "velocityEstimate",
+          "tag": 20,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(4..7))",
+          "optional": true
+        },
+        {
+          "name": "sequenceNumber",
+          "tag": 21,
+          "implicit": true,
+          "type": "INTEGER",
+          "qualifiers": "(1..8639999)",
+          "optional": true
+        },
+        {
+          "name": "periodicLDRInfo",
+          "tag": 22,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "reportingAmount",
+              "type": "INTEGER",
+              "qualifiers": "(1..8639999)"
+            },
+            {
+              "name": "reportingInterval",
+              "type": "INTEGER",
+              "qualifiers": "(1..8639999)"
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "mo-lrShortCircuitIndicator",
+          "tag": 23,
+          "implicit": true,
+          "type": "NULL",
+          "optional": true
+        },
+        {
+          "name": "geranGANSSpositioningData",
+          "tag": 24,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(2..10))",
+          "optional": true
+        },
+        {
+          "name": "utranGANSSpositioningData",
+          "tag": 25,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1..9))",
+          "optional": true
+        },
+        {
+          "name": "targetServingNodeForHandover",
+          "tag": 26,
+          "type": "CHOICE",
+          "elements": [
+            {
+              "name": "msc-Number",
+              "tag": 0,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1..9))"
+            },
+            {
+              "name": "sgsn-Number",
+              "tag": 1,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1..9))"
+            },
+            {
+              "name": "mme-Number",
+              "tag": 2,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(9..255))"
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "utranAdditionalPositioningData",
+          "tag": 27,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1..8))",
+          "optional": true
+        },
+        {
+          "name": "utranBaroPressureMeas",
+          "tag": 28,
+          "implicit": true,
+          "type": "INTEGER",
+          "qualifiers": "(30000..115000)",
+          "optional": true
+        },
+        {
+          "name": "utranCivicAddress",
+          "tag": 29,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "optional": true
+        }
+      ]
+    },
+    "result": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "length": 111,
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "na-ESRK",
+          "tag": 0,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1..9))",
+          "optional": true
+        },
+        {
+          "name": "na-ESRD",
+          "tag": 1,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1..9))",
+          "optional": true
+        },
+        {
+          "name": "h-gmlc-Address",
+          "tag": 2,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(5..17))",
+          "optional": true
+        },
+        {
+          "name": "mo-lrShortCircuitIndicator",
+          "tag": 3,
+          "implicit": true,
+          "type": "NULL",
+          "optional": true
+        },
+        {
+          "name": "reportingPLMNList",
+          "tag": 4,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "plmn-ListPrioritized",
+              "tag": 0,
+              "implicit": true,
+              "type": "NULL",
+              "optional": true
+            },
+            {
+              "name": "plmn-List",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..20))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "length": 172,
+                "elements": [
+                  {
+                    "name": "plmn-Id",
+                    "tag": 0,
+                    "implicit": true,
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(3))"
+                  },
+                  {
+                    "name": "ran-Technology",
+                    "tag": 1,
+                    "implicit": true,
+                    "type": "ENUMERATED",
+                    "values": [
+                      {
+                        "name": "gsm",
+                        "value": 0
+                      },
+                      {
+                        "name": "umts",
+                        "value": 1
+                      }
+                    ],
+                    "optional": true
+                  },
+                  {
+                    "name": "ran-PeriodicLocationSupport",
+                    "tag": 2,
+                    "implicit": true,
+                    "type": "NULL",
+                    "optional": true
+                  }
+                ]
+              }
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "lcs-ReferenceNumber",
+          "tag": 5,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1))",
+          "optional": true
+        }
+      ]
+    },
+    "code": 86
+  }
+}
