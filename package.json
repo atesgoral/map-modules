@@ -14,7 +14,7 @@
   "main": "convert.js",
   "dependencies": {},
   "devDependencies": {
-    "asn1exp": "0.0.1",
+    "asn1exp": "0.0.2",
     "get-stdin": "^5.0.1",
     "minimist": "^1.2.0"
   },

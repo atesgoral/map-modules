@@ -68,7 +68,6 @@
               "qualifiers": "(SIZE(1..10))",
               "ofElement": {
                 "type": "SEQUENCE",
-                "length": 111,
                 "elements": [
                   {
                     "name": "extId",
@@ -148,7 +147,6 @@
               "qualifiers": "(SIZE(1..10))",
               "ofElement": {
                 "type": "SEQUENCE",
-                "length": 111,
                 "elements": [
                   {
                     "name": "extId",
@@ -202,7 +200,6 @@
               "qualifiers": "(SIZE(1..10))",
               "ofElement": {
                 "type": "SEQUENCE",
-                "length": 111,
                 "elements": [
                   {
                     "name": "extId",
@@ -276,7 +273,6 @@
               "qualifiers": "(SIZE(1..10))",
               "ofElement": {
                 "type": "SEQUENCE",
-                "length": 111,
                 "elements": [
                   {
                     "name": "extId",
@@ -345,7 +341,6 @@
               "qualifiers": "(SIZE(1..10))",
               "ofElement": {
                 "type": "SEQUENCE",
-                "length": 111,
                 "elements": [
                   {
                     "name": "extId",
@@ -446,7 +441,6 @@
                   "qualifiers": "(SIZE(1..10))",
                   "ofElement": {
                     "type": "SEQUENCE",
-                    "length": 111,
                     "elements": [
                       {
                         "name": "extId",
@@ -539,7 +533,6 @@
               "qualifiers": "(SIZE(1..10))",
               "ofElement": {
                 "type": "SEQUENCE",
-                "length": 111,
                 "elements": [
                   {
                     "name": "extId",
@@ -685,7 +678,6 @@
                   "qualifiers": "(SIZE(1..10))",
                   "ofElement": {
                     "type": "SEQUENCE",
-                    "length": 111,
                     "elements": [
                       {
                         "name": "extId",
@@ -824,7 +816,6 @@
               "qualifiers": "(SIZE(1..10))",
               "ofElement": {
                 "type": "SEQUENCE",
-                "length": 111,
                 "elements": [
                   {
                     "name": "extId",
@@ -933,7 +924,6 @@
               "qualifiers": "(SIZE(1..10))",
               "ofElement": {
                 "type": "SEQUENCE",
-                "length": 111,
                 "elements": [
                   {
                     "name": "extId",

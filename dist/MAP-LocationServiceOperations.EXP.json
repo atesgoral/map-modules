@@ -45,7 +45,6 @@
               "qualifiers": "(SIZE(1..10))",
               "ofElement": {
                 "type": "SEQUENCE",
-                "length": 111,
                 "elements": [
                   {
                     "name": "extId",
@@ -132,7 +131,6 @@
                   "qualifiers": "(SIZE(1..10))",
                   "ofElement": {
                     "type": "SEQUENCE",
-                    "length": 111,
                     "elements": [
                       {
                         "name": "extId",
@@ -297,7 +295,6 @@
               "qualifiers": "(SIZE(1..10))",
               "ofElement": {
                 "type": "SEQUENCE",
-                "length": 111,
                 "elements": [
                   {
                     "name": "extId",
@@ -496,7 +493,6 @@
                       "qualifiers": "(SIZE(1..10))",
                       "ofElement": {
                         "type": "SEQUENCE",
-                        "length": 111,
                         "elements": [
                           {
                             "name": "extId",
@@ -792,7 +788,6 @@
                   "qualifiers": "(SIZE(1..10))",
                   "ofElement": {
                     "type": "SEQUENCE",
-                    "length": 111,
                     "elements": [
                       {
                         "name": "extId",
@@ -844,7 +839,6 @@
               "qualifiers": "(SIZE(1..10))",
               "ofElement": {
                 "type": "SEQUENCE",
-                "length": 111,
                 "elements": [
                   {
                     "name": "extId",
@@ -1035,7 +1029,6 @@
                   "qualifiers": "(SIZE(1..10))",
                   "ofElement": {
                     "type": "SEQUENCE",
-                    "length": 195,
                     "elements": [
                       {
                         "name": "areaType",
@@ -1164,7 +1157,6 @@
               "qualifiers": "(SIZE(1..20))",
               "ofElement": {
                 "type": "SEQUENCE",
-                "length": 172,
                 "elements": [
                   {
                     "name": "plmn-Id",
@@ -1235,7 +1227,6 @@
               "qualifiers": "(SIZE(1..10))",
               "ofElement": {
                 "type": "SEQUENCE",
-                "length": 111,
                 "elements": [
                   {
                     "name": "extId",
@@ -1517,7 +1508,6 @@
                       "qualifiers": "(SIZE(1..10))",
                       "ofElement": {
                         "type": "SEQUENCE",
-                        "length": 111,
                         "elements": [
                           {
                             "name": "extId",
@@ -1730,7 +1720,6 @@
                   "qualifiers": "(SIZE(1..10))",
                   "ofElement": {
                     "type": "SEQUENCE",
-                    "length": 111,
                     "elements": [
                       {
                         "name": "extId",
@@ -1951,7 +1940,6 @@
               "qualifiers": "(SIZE(1..10))",
               "ofElement": {
                 "type": "SEQUENCE",
-                "length": 111,
                 "elements": [
                   {
                     "name": "extId",
@@ -2110,7 +2098,6 @@
                       "qualifiers": "(SIZE(1..10))",
                       "ofElement": {
                         "type": "SEQUENCE",
-                        "length": 111,
                         "elements": [
                           {
                             "name": "extId",
@@ -2485,7 +2472,6 @@
               "qualifiers": "(SIZE(1..10))",
               "ofElement": {
                 "type": "SEQUENCE",
-                "length": 111,
                 "elements": [
                   {
                     "name": "extId",
@@ -2565,7 +2551,6 @@
               "qualifiers": "(SIZE(1..20))",
               "ofElement": {
                 "type": "SEQUENCE",
-                "length": 172,
                 "elements": [
                   {
                     "name": "plmn-Id",

@@ -99,7 +99,6 @@
               "qualifiers": "(SIZE(1..13))",
               "ofElement": {
                 "type": "SEQUENCE",
-                "length": 521,
                 "elements": [
                   {
                     "name": "basicService",
@@ -193,7 +192,6 @@
               "qualifiers": "(SIZE(1..13))",
               "ofElement": {
                 "type": "SEQUENCE",
-                "length": 185,
                 "elements": [
                   {
                     "name": "basicService",
@@ -298,7 +296,6 @@
               "qualifiers": "(SIZE(1..13))",
               "ofElement": {
                 "type": "CHOICE",
-                "length": 99,
                 "elements": [
                   {
                     "name": "bearerService",
@@ -398,7 +395,6 @@
               "qualifiers": "(SIZE(1..13))",
               "ofElement": {
                 "type": "SEQUENCE",
-                "length": 521,
                 "elements": [
                   {
                     "name": "basicService",
@@ -492,7 +488,6 @@
               "qualifiers": "(SIZE(1..13))",
               "ofElement": {
                 "type": "SEQUENCE",
-                "length": 185,
                 "elements": [
                   {
                     "name": "basicService",
@@ -597,7 +592,6 @@
               "qualifiers": "(SIZE(1..13))",
               "ofElement": {
                 "type": "CHOICE",
-                "length": 99,
                 "elements": [
                   {
                     "name": "bearerService",
@@ -697,7 +691,6 @@
               "qualifiers": "(SIZE(1..13))",
               "ofElement": {
                 "type": "SEQUENCE",
-                "length": 521,
                 "elements": [
                   {
                     "name": "basicService",
@@ -791,7 +784,6 @@
               "qualifiers": "(SIZE(1..13))",
               "ofElement": {
                 "type": "SEQUENCE",
-                "length": 185,
                 "elements": [
                   {
                     "name": "basicService",
@@ -896,7 +888,6 @@
               "qualifiers": "(SIZE(1..13))",
               "ofElement": {
                 "type": "CHOICE",
-                "length": 99,
                 "elements": [
                   {
                     "name": "bearerService",
@@ -996,7 +987,6 @@
               "qualifiers": "(SIZE(1..13))",
               "ofElement": {
                 "type": "SEQUENCE",
-                "length": 521,
                 "elements": [
                   {
                     "name": "basicService",
@@ -1090,7 +1080,6 @@
               "qualifiers": "(SIZE(1..13))",
               "ofElement": {
                 "type": "SEQUENCE",
-                "length": 185,
                 "elements": [
                   {
                     "name": "basicService",
@@ -1195,7 +1184,6 @@
               "qualifiers": "(SIZE(1..13))",
               "ofElement": {
                 "type": "CHOICE",
-                "length": 99,
                 "elements": [
                   {
                     "name": "bearerService",
@@ -1292,7 +1280,6 @@
           "qualifiers": "(SIZE(1..13))",
           "ofElement": {
             "type": "CHOICE",
-            "length": 99,
             "elements": [
               {
                 "name": "bearerService",
@@ -1319,7 +1306,6 @@
           "qualifiers": "(SIZE(1..13))",
           "ofElement": {
             "type": "SEQUENCE",
-            "length": 521,
             "elements": [
               {
                 "name": "basicService",
@@ -1447,7 +1433,6 @@
               "qualifiers": "(SIZE(1..5))",
               "ofElement": {
                 "type": "SEQUENCE",
-                "length": 329,
                 "elements": [
                   {
                     "name": "ccbs-Index",
@@ -1727,8 +1712,7 @@
           "qualifiers": "(SIZE(1..2))",
           "ofElement": {
             "type": "OCTET STRING",
-            "qualifiers": "(SIZE(1..20))",
-            "length": 25
+            "qualifiers": "(SIZE(1..20))"
           },
           "optional": true
         },
@@ -1746,7 +1730,6 @@
               "qualifiers": "(SIZE(1..10))",
               "ofElement": {
                 "type": "SEQUENCE",
-                "length": 111,
                 "elements": [
                   {
                     "name": "extId",
@@ -1836,7 +1819,6 @@
               "qualifiers": "(SIZE(1..10))",
               "ofElement": {
                 "type": "SEQUENCE",
-                "length": 111,
                 "elements": [
                   {
                     "name": "extId",
@@ -2009,7 +1991,6 @@
                       "qualifiers": "(SIZE(1..10))",
                       "ofElement": {
                         "type": "SEQUENCE",
-                        "length": 111,
                         "elements": [
                           {
                             "name": "extId",
@@ -2084,7 +2065,6 @@
                       "qualifiers": "(SIZE(1..10))",
                       "ofElement": {
                         "type": "SEQUENCE",
-                        "length": 111,
                         "elements": [
                           {
                             "name": "extId",
