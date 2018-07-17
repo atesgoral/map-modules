@@ -1,6 +1,6 @@
 # map-modules
 
-Expanded ASN.1 modules for Mobile Application Part (MAP) (3GPP TS 29.002) in JSON format. Just the OPERATION definitions.
+Expanded ASN.1 modules for Mobile Application Part (MAP) (3GPP TS 29.002) in JSON format.
 
 Converted using [asn1exp](https://www.npmjs.com/package/asn1exp) from http://www.3gpp.org/ftp/specs/archive/29_series/29.002/ASN.1/.
 

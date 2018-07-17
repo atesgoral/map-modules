@@ -1,0 +1,2637 @@
+{
+  "systemFailure": {
+    "parameter": {
+      "type": "CHOICE",
+      "elements": [
+        {
+          "name": "networkResource",
+          "type": "ENUMERATED",
+          "values": [
+            {
+              "name": "plmn",
+              "value": 0
+            },
+            {
+              "name": "hlr",
+              "value": 1
+            },
+            {
+              "name": "vlr",
+              "value": 2
+            },
+            {
+              "name": "pvlr",
+              "value": 3
+            },
+            {
+              "name": "controllingMSC",
+              "value": 4
+            },
+            {
+              "name": "vmsc",
+              "value": 5
+            },
+            {
+              "name": "eir",
+              "value": 6
+            },
+            {
+              "name": "rss",
+              "value": 7
+            }
+          ]
+        },
+        {
+          "name": "extensibleSystemFailureParam",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "networkResource",
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "plmn",
+                  "value": 0
+                },
+                {
+                  "name": "hlr",
+                  "value": 1
+                },
+                {
+                  "name": "vlr",
+                  "value": 2
+                },
+                {
+                  "name": "pvlr",
+                  "value": 3
+                },
+                {
+                  "name": "controllingMSC",
+                  "value": 4
+                },
+                {
+                  "name": "vmsc",
+                  "value": 5
+                },
+                {
+                  "name": "eir",
+                  "value": 6
+                },
+                {
+                  "name": "rss",
+                  "value": 7
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "extensionContainer",
+              "type": "SEQUENCE",
+              "elements": [
+                {
+                  "name": "privateExtensionList",
+                  "tag": 0,
+                  "implicit": true,
+                  "type": "SEQUENCE",
+                  "qualifiers": "(SIZE(1..10))",
+                  "ofElement": {
+                    "type": "SEQUENCE",
+                    "elements": [
+                      {
+                        "name": "extId",
+                        "type": "MAP-EXTENSION",
+                        "qualifiers": ".&extensionId({,...})"
+                      },
+                      {
+                        "name": "extType",
+                        "type": "MAP-EXTENSION",
+                        "qualifiers": ".&ExtensionType({,...}{@extId})",
+                        "optional": true
+                      }
+                    ]
+                  },
+                  "optional": true
+                },
+                {
+                  "name": "pcs-Extensions",
+                  "tag": 1,
+                  "implicit": true,
+                  "type": "SEQUENCE",
+                  "elements": [],
+                  "optional": true
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "additionalNetworkResource",
+              "tag": 0,
+              "implicit": true,
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "sgsn",
+                  "value": 0
+                },
+                {
+                  "name": "ggsn",
+                  "value": 1
+                },
+                {
+                  "name": "gmlc",
+                  "value": 2
+                },
+                {
+                  "name": "gsmSCF",
+                  "value": 3
+                },
+                {
+                  "name": "nplr",
+                  "value": 4
+                },
+                {
+                  "name": "auc",
+                  "value": 5
+                },
+                {
+                  "name": "ue",
+                  "value": 6
+                },
+                {
+                  "name": "mme",
+                  "value": 7
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "failureCauseParam",
+              "tag": 1,
+              "implicit": true,
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "limitReachedOnNumberOfConcurrentLocationRequests",
+                  "value": 0
+                }
+              ],
+              "optional": true
+            }
+          ]
+        }
+      ]
+    },
+    "code": 34
+  },
+  "dataMissing": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 35
+  },
+  "unexpectedDataValue": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "unexpectedSubscriber",
+          "tag": 0,
+          "implicit": true,
+          "type": "NULL",
+          "optional": true
+        }
+      ]
+    },
+    "code": 36
+  },
+  "facilityNotSupported": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "shapeOfLocationEstimateNotSupported",
+          "tag": 0,
+          "implicit": true,
+          "type": "NULL",
+          "optional": true
+        },
+        {
+          "name": "neededLcsCapabilityNotSupportedInServingNode",
+          "tag": 1,
+          "implicit": true,
+          "type": "NULL",
+          "optional": true
+        }
+      ]
+    },
+    "code": 21
+  },
+  "incompatibleTerminal": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 28
+  },
+  "resourceLimitation": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 51
+  },
+  "unknownSubscriber": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "unknownSubscriberDiagnostic",
+          "type": "ENUMERATED",
+          "values": [
+            {
+              "name": "imsiUnknown",
+              "value": 0
+            },
+            {
+              "name": "gprs-eps-SubscriptionUnknown",
+              "value": 1
+            },
+            {
+              "name": "npdbMismatch",
+              "value": 2
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 1
+  },
+  "numberChanged": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 44
+  },
+  "unknownMSC": {
+    "parameter": null,
+    "code": 3
+  },
+  "unidentifiedSubscriber": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 5
+  },
+  "unknownEquipment": {
+    "parameter": null,
+    "code": 7
+  },
+  "roamingNotAllowed": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "roamingNotAllowedCause",
+          "type": "ENUMERATED",
+          "values": [
+            {
+              "name": "plmnRoamingNotAllowed",
+              "value": 0
+            },
+            {
+              "name": "operatorDeterminedBarring",
+              "value": 3
+            }
+          ]
+        },
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "additionalRoamingNotAllowedCause",
+          "tag": 0,
+          "implicit": true,
+          "type": "ENUMERATED",
+          "values": [
+            {
+              "name": "supportedRAT-TypesNotAllowed",
+              "value": 0
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 8
+  },
+  "illegalSubscriber": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 9
+  },
+  "illegalEquipment": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 12
+  },
+  "bearerServiceNotProvisioned": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 10
+  },
+  "teleserviceNotProvisioned": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 11
+  },
+  "noHandoverNumberAvailable": {
+    "parameter": null,
+    "code": 25
+  },
+  "subsequentHandoverFailure": {
+    "parameter": null,
+    "code": 26
+  },
+  "targetCellOutsideGroupCallArea": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 42
+  },
+  "tracingBufferFull": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 40
+  },
+  "noRoamingNumberAvailable": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 39
+  },
+  "absentSubscriber": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "absentSubscriberReason",
+          "tag": 0,
+          "implicit": true,
+          "type": "ENUMERATED",
+          "values": [
+            {
+              "name": "imsiDetach",
+              "value": 0
+            },
+            {
+              "name": "restrictedArea",
+              "value": 1
+            },
+            {
+              "name": "noPageResponse",
+              "value": 2
+            },
+            {
+              "name": "purgedMS",
+              "value": 3
+            },
+            {
+              "name": "mtRoamingRetry",
+              "value": 4
+            },
+            {
+              "name": "busySubscriber",
+              "value": 5
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 27
+  },
+  "busySubscriber": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "ccbs-Possible",
+          "tag": 0,
+          "implicit": true,
+          "type": "NULL",
+          "optional": true
+        },
+        {
+          "name": "ccbs-Busy",
+          "tag": 1,
+          "implicit": true,
+          "type": "NULL",
+          "optional": true
+        }
+      ]
+    },
+    "code": 45
+  },
+  "noSubscriberReply": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 46
+  },
+  "callBarred": {
+    "parameter": {
+      "type": "CHOICE",
+      "elements": [
+        {
+          "name": "callBarringCause",
+          "type": "ENUMERATED",
+          "values": [
+            {
+              "name": "barringServiceActive",
+              "value": 0
+            },
+            {
+              "name": "operatorBarring",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "name": "extensibleCallBarredParam",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "callBarringCause",
+              "type": "ENUMERATED",
+              "values": [
+                {
+                  "name": "barringServiceActive",
+                  "value": 0
+                },
+                {
+                  "name": "operatorBarring",
+                  "value": 1
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "extensionContainer",
+              "type": "SEQUENCE",
+              "elements": [
+                {
+                  "name": "privateExtensionList",
+                  "tag": 0,
+                  "implicit": true,
+                  "type": "SEQUENCE",
+                  "qualifiers": "(SIZE(1..10))",
+                  "ofElement": {
+                    "type": "SEQUENCE",
+                    "elements": [
+                      {
+                        "name": "extId",
+                        "type": "MAP-EXTENSION",
+                        "qualifiers": ".&extensionId({,...})"
+                      },
+                      {
+                        "name": "extType",
+                        "type": "MAP-EXTENSION",
+                        "qualifiers": ".&ExtensionType({,...}{@extId})",
+                        "optional": true
+                      }
+                    ]
+                  },
+                  "optional": true
+                },
+                {
+                  "name": "pcs-Extensions",
+                  "tag": 1,
+                  "implicit": true,
+                  "type": "SEQUENCE",
+                  "elements": [],
+                  "optional": true
+                }
+              ],
+              "optional": true
+            },
+            {
+              "name": "unauthorisedMessageOriginator",
+              "tag": 1,
+              "implicit": true,
+              "type": "NULL",
+              "optional": true
+            },
+            {
+              "name": "anonymousCallRejection",
+              "tag": 2,
+              "implicit": true,
+              "type": "NULL",
+              "optional": true
+            }
+          ]
+        }
+      ]
+    },
+    "code": 13
+  },
+  "forwardingViolation": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 14
+  },
+  "forwardingFailed": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 47
+  },
+  "cug-Reject": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "cug-RejectCause",
+          "type": "ENUMERATED",
+          "values": [
+            {
+              "name": "incomingCallsBarredWithinCUG",
+              "value": 0
+            },
+            {
+              "name": "subscriberNotMemberOfCUG",
+              "value": 1
+            },
+            {
+              "name": "requestedBasicServiceViolatesCUG-Constraints",
+              "value": 5
+            },
+            {
+              "name": "calledPartySS-InteractionViolation",
+              "value": 7
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 15
+  },
+  "or-NotAllowed": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 48
+  },
+  "ati-NotAllowed": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 49
+  },
+  "atsi-NotAllowed": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 60
+  },
+  "atm-NotAllowed": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 61
+  },
+  "informationNotAvailable": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 62
+  },
+  "illegalSS-Operation": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 16
+  },
+  "ss-ErrorStatus": {
+    "parameter": {
+      "type": "OCTET STRING",
+      "qualifiers": "(SIZE(1))"
+    },
+    "code": 17
+  },
+  "ss-NotAvailable": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 18
+  },
+  "ss-SubscriptionViolation": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 19
+  },
+  "ss-Incompatibility": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "ss-Code",
+          "tag": 1,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1))",
+          "optional": true
+        },
+        {
+          "name": "basicService",
+          "type": "CHOICE",
+          "elements": [
+            {
+              "name": "bearerService",
+              "tag": 2,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1))"
+            },
+            {
+              "name": "teleservice",
+              "tag": 3,
+              "implicit": true,
+              "type": "OCTET STRING",
+              "qualifiers": "(SIZE(1))"
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "ss-Status",
+          "tag": 4,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1))",
+          "optional": true
+        }
+      ]
+    },
+    "code": 20
+  },
+  "unknownAlphabet": {
+    "parameter": null,
+    "code": 71
+  },
+  "ussd-Busy": {
+    "parameter": null,
+    "code": 72
+  },
+  "pw-RegistrationFailure": {
+    "parameter": {
+      "type": "ENUMERATED",
+      "values": [
+        {
+          "name": "undetermined",
+          "value": 0
+        },
+        {
+          "name": "invalidFormat",
+          "value": 1
+        },
+        {
+          "name": "newPasswordsMismatch",
+          "value": 2
+        }
+      ]
+    },
+    "code": 37
+  },
+  "negativePW-Check": {
+    "parameter": null,
+    "code": 38
+  },
+  "numberOfPW-AttemptsViolation": {
+    "parameter": null,
+    "code": 43
+  },
+  "shortTermDenial": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": []
+    },
+    "code": 29
+  },
+  "longTermDenial": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": []
+    },
+    "code": 30
+  },
+  "subscriberBusyForMT-SMS": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "gprsConnectionSuspended",
+          "type": "NULL",
+          "optional": true
+        }
+      ]
+    },
+    "code": 31
+  },
+  "sm-DeliveryFailure": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "sm-EnumeratedDeliveryFailureCause",
+          "type": "ENUMERATED",
+          "values": [
+            {
+              "name": "memoryCapacityExceeded",
+              "value": 0
+            },
+            {
+              "name": "equipmentProtocolError",
+              "value": 1
+            },
+            {
+              "name": "equipmentNotSM-Equipped",
+              "value": 2
+            },
+            {
+              "name": "unknownServiceCentre",
+              "value": 3
+            },
+            {
+              "name": "sc-Congestion",
+              "value": 4
+            },
+            {
+              "name": "invalidSME-Address",
+              "value": 5
+            },
+            {
+              "name": "subscriberNotSC-Subscriber",
+              "value": 6
+            }
+          ]
+        },
+        {
+          "name": "diagnosticInfo",
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(1..200))",
+          "optional": true
+        },
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 32
+  },
+  "messageWaitingListFull": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 33
+  },
+  "absentSubscriberSM": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "absentSubscriberDiagnosticSM",
+          "type": "INTEGER",
+          "qualifiers": "(0..255)",
+          "optional": true
+        },
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "additionalAbsentSubscriberDiagnosticSM",
+          "tag": 0,
+          "implicit": true,
+          "type": "INTEGER",
+          "qualifiers": "(0..255)",
+          "optional": true
+        },
+        {
+          "name": "imsi",
+          "tag": 1,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(3..8))",
+          "optional": true
+        },
+        {
+          "name": "requestedRetransmissionTime",
+          "tag": 2,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(4))",
+          "optional": true
+        },
+        {
+          "name": "userIdentifierAlert",
+          "tag": 3,
+          "implicit": true,
+          "type": "OCTET STRING",
+          "qualifiers": "(SIZE(3..8))",
+          "optional": true
+        }
+      ]
+    },
+    "code": 6
+  },
+  "noGroupCallNumberAvailable": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 50
+  },
+  "ongoingGroupCall": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 22
+  },
+  "unauthorizedRequestingNetwork": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 52
+  },
+  "unauthorizedLCSClient": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "unauthorizedLCSClient-Diagnostic",
+          "tag": 0,
+          "implicit": true,
+          "type": "ENUMERATED",
+          "values": [
+            {
+              "name": "noAdditionalInformation",
+              "value": 0
+            },
+            {
+              "name": "clientNotInMSPrivacyExceptionList",
+              "value": 1
+            },
+            {
+              "name": "callToClientNotSetup",
+              "value": 2
+            },
+            {
+              "name": "privacyOverrideNotApplicable",
+              "value": 3
+            },
+            {
+              "name": "disallowedByLocalRegulatoryRequirements",
+              "value": 4
+            },
+            {
+              "name": "unauthorizedPrivacyClass",
+              "value": 5
+            },
+            {
+              "name": "unauthorizedCallSessionUnrelatedExternalClient",
+              "value": 6
+            },
+            {
+              "name": "unauthorizedCallSessionRelatedExternalClient",
+              "value": 7
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "extensionContainer",
+          "tag": 1,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 53
+  },
+  "positionMethodFailure": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "positionMethodFailure-Diagnostic",
+          "tag": 0,
+          "implicit": true,
+          "type": "ENUMERATED",
+          "values": [
+            {
+              "name": "congestion",
+              "value": 0
+            },
+            {
+              "name": "insufficientResources",
+              "value": 1
+            },
+            {
+              "name": "insufficientMeasurementData",
+              "value": 2
+            },
+            {
+              "name": "inconsistentMeasurementData",
+              "value": 3
+            },
+            {
+              "name": "locationProcedureNotCompleted",
+              "value": 4
+            },
+            {
+              "name": "locationProcedureNotSupportedByTargetMS",
+              "value": 5
+            },
+            {
+              "name": "qoSNotAttainable",
+              "value": 6
+            },
+            {
+              "name": "positionMethodNotAvailableInNetwork",
+              "value": 7
+            },
+            {
+              "name": "positionMethodNotAvailableInLocationArea",
+              "value": 8
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "extensionContainer",
+          "tag": 1,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 54
+  },
+  "unknownOrUnreachableLCSClient": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 58
+  },
+  "mm-EventNotSupported": {
+    "parameter": {
+      "type": "SEQUENCE",
+      "elements": [
+        {
+          "name": "extensionContainer",
+          "type": "SEQUENCE",
+          "elements": [
+            {
+              "name": "privateExtensionList",
+              "tag": 0,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..10))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "extId",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&extensionId({,...})"
+                  },
+                  {
+                    "name": "extType",
+                    "type": "MAP-EXTENSION",
+                    "qualifiers": ".&ExtensionType({,...}{@extId})",
+                    "optional": true
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "pcs-Extensions",
+              "tag": 1,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "elements": [],
+              "optional": true
+            }
+          ],
+          "optional": true
+        }
+      ]
+    },
+    "code": 59
+  }
+}
