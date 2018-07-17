@@ -1,6 +1,6 @@
 {
   "name": "map-modules",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Expanded ASN.1 modules for Mobile Application Part (MAP) (3GPP TS 29.002) in JSON format",
   "keywords": [
     "ss7",
