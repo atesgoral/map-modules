@@ -19,8 +19,8 @@
     "minimist": "^1.2.0"
   },
   "scripts": {
-    "convert": "cd 29002-e30\\ ASN1 && for file in *Operations.EXP; do node ../convert \"$file\" > \"../dist/$file.json\" ; done",
-    "convert-min": "cd 29002-e30\\ ASN1 && for file in *Operations.EXP; do node ../convert \"$file\" --min > \"../dist/$file.min.json\" ; done"
+    "convert": "cd 29002-f30\\ ASN1 && for file in *Operations.EXP; do node ../convert \"$file\" > \"../dist/$file.json\" ; done",
+    "convert-min": "cd 29002-f30\\ ASN1 && for file in *Operations.EXP; do node ../convert \"$file\" --min > \"../dist/$file.min.json\" ; done"
   },
   "repository": {
     "type": "git",

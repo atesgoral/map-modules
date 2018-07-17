@@ -2207,6 +2207,10 @@
                 {
                   "name": "non-IP-PDP-Type-APNs",
                   "value": 38
+                },
+                {
+                  "name": "nrAsSecondaryRAT",
+                  "value": 39
                 }
               ],
               "optional": true
@@ -2251,6 +2255,20 @@
               "tag": 16,
               "implicit": true,
               "type": "NULL",
+              "optional": true
+            },
+            {
+              "name": "ext-SupportedFeatures",
+              "tag": 17,
+              "implicit": true,
+              "type": "BIT STRING",
+              "qualifiers": "(SIZE(1..40))",
+              "values": [
+                {
+                  "name": "unlicensedSpectrumAsSecondaryRAT",
+                  "value": 0
+                }
+              ],
               "optional": true
             }
           ],
@@ -27547,6 +27565,20 @@
                           }
                         ],
                         "optional": true
+                      },
+                      {
+                        "name": "extended-Max-RequestedBandwidth-UL",
+                        "tag": 3,
+                        "implicit": true,
+                        "type": "INTEGER",
+                        "optional": true
+                      },
+                      {
+                        "name": "extended-Max-RequestedBandwidth-DL",
+                        "tag": 4,
+                        "implicit": true,
+                        "type": "INTEGER",
+                        "optional": true
                       }
                     ],
                     "optional": true
@@ -29965,6 +29997,20 @@
                     }
                   ],
                   "optional": true
+                },
+                {
+                  "name": "extended-Max-RequestedBandwidth-UL",
+                  "tag": 3,
+                  "implicit": true,
+                  "type": "INTEGER",
+                  "optional": true
+                },
+                {
+                  "name": "extended-Max-RequestedBandwidth-DL",
+                  "tag": 4,
+                  "implicit": true,
+                  "type": "INTEGER",
+                  "optional": true
                 }
               ],
               "optional": true
@@ -30311,6 +30357,20 @@
                                 "optional": true
                               }
                             ],
+                            "optional": true
+                          },
+                          {
+                            "name": "extended-Max-RequestedBandwidth-UL",
+                            "tag": 3,
+                            "implicit": true,
+                            "type": "INTEGER",
+                            "optional": true
+                          },
+                          {
+                            "name": "extended-Max-RequestedBandwidth-DL",
+                            "tag": 4,
+                            "implicit": true,
+                            "type": "INTEGER",
                             "optional": true
                           }
                         ],
@@ -31146,6 +31206,24 @@
                     "value": 7
                   }
                 ]
+              },
+              {
+                "name": "ext-AccessRestrictionData",
+                "tag": 2,
+                "implicit": true,
+                "type": "BIT STRING",
+                "qualifiers": "(SIZE(1..32))",
+                "values": [
+                  {
+                    "name": "nrAsSecondaryRATNotAllowed",
+                    "value": 0
+                  },
+                  {
+                    "name": "unlicensedSpectrumAsSecondaryRATNotAllowed",
+                    "value": 1
+                  }
+                ],
+                "optional": true
               }
             ]
           },
@@ -31218,6 +31296,76 @@
             "type": "OCTET STRING",
             "qualifiers": "(SIZE(1..4))"
           },
+          "optional": true
+        },
+        {
+          "name": "eDRX-Cycle-Length-List",
+          "tag": 52,
+          "implicit": true,
+          "type": "SEQUENCE",
+          "qualifiers": "(SIZE(1..8))",
+          "ofElement": {
+            "type": "SEQUENCE",
+            "elements": [
+              {
+                "name": "rat-Type",
+                "tag": 0,
+                "implicit": true,
+                "type": "ENUMERATED",
+                "values": [
+                  {
+                    "name": "utran",
+                    "value": 0
+                  },
+                  {
+                    "name": "geran",
+                    "value": 1
+                  },
+                  {
+                    "name": "gan",
+                    "value": 2
+                  },
+                  {
+                    "name": "i-hspa-evolution",
+                    "value": 3
+                  },
+                  {
+                    "name": "e-utran",
+                    "value": 4
+                  },
+                  {
+                    "name": "nb-iot",
+                    "value": 5
+                  }
+                ]
+              },
+              {
+                "name": "eDRX-Cycle-Length-Value",
+                "tag": 1,
+                "implicit": true,
+                "type": "OCTET STRING",
+                "qualifiers": "(SIZE(1))"
+              }
+            ]
+          },
+          "optional": true
+        },
+        {
+          "name": "ext-AccessRestrictionData",
+          "tag": 53,
+          "implicit": true,
+          "type": "BIT STRING",
+          "qualifiers": "(SIZE(1..32))",
+          "values": [
+            {
+              "name": "nrAsSecondaryRATNotAllowed",
+              "value": 0
+            },
+            {
+              "name": "unlicensedSpectrumAsSecondaryRATNotAllowed",
+              "value": 1
+            }
+          ],
           "optional": true
         }
       ]
@@ -31679,6 +31827,24 @@
             {
               "name": "non-IP-PDP-Type-APNs",
               "value": 38
+            },
+            {
+              "name": "nrAsSecondaryRAT",
+              "value": 39
+            }
+          ],
+          "optional": true
+        },
+        {
+          "name": "ext-SupportedFeatures",
+          "tag": 10,
+          "implicit": true,
+          "type": "BIT STRING",
+          "qualifiers": "(SIZE(1..40))",
+          "values": [
+            {
+              "name": "unlicensedSpectrumAsSecondaryRAT",
+              "value": 0
             }
           ],
           "optional": true
@@ -35120,6 +35286,20 @@
                               }
                             ],
                             "optional": true
+                          },
+                          {
+                            "name": "extended-Max-RequestedBandwidth-UL",
+                            "tag": 3,
+                            "implicit": true,
+                            "type": "INTEGER",
+                            "optional": true
+                          },
+                          {
+                            "name": "extended-Max-RequestedBandwidth-DL",
+                            "tag": 4,
+                            "implicit": true,
+                            "type": "INTEGER",
+                            "optional": true
                           }
                         ],
                         "optional": true
@@ -37538,6 +37718,20 @@
                         }
                       ],
                       "optional": true
+                    },
+                    {
+                      "name": "extended-Max-RequestedBandwidth-UL",
+                      "tag": 3,
+                      "implicit": true,
+                      "type": "INTEGER",
+                      "optional": true
+                    },
+                    {
+                      "name": "extended-Max-RequestedBandwidth-DL",
+                      "tag": 4,
+                      "implicit": true,
+                      "type": "INTEGER",
+                      "optional": true
                     }
                   ],
                   "optional": true
@@ -37884,6 +38078,20 @@
                                     "optional": true
                                   }
                                 ],
+                                "optional": true
+                              },
+                              {
+                                "name": "extended-Max-RequestedBandwidth-UL",
+                                "tag": 3,
+                                "implicit": true,
+                                "type": "INTEGER",
+                                "optional": true
+                              },
+                              {
+                                "name": "extended-Max-RequestedBandwidth-DL",
+                                "tag": 4,
+                                "implicit": true,
+                                "type": "INTEGER",
                                 "optional": true
                               }
                             ],
@@ -38719,6 +38927,24 @@
                         "value": 7
                       }
                     ]
+                  },
+                  {
+                    "name": "ext-AccessRestrictionData",
+                    "tag": 2,
+                    "implicit": true,
+                    "type": "BIT STRING",
+                    "qualifiers": "(SIZE(1..32))",
+                    "values": [
+                      {
+                        "name": "nrAsSecondaryRATNotAllowed",
+                        "value": 0
+                      },
+                      {
+                        "name": "unlicensedSpectrumAsSecondaryRATNotAllowed",
+                        "value": 1
+                      }
+                    ],
+                    "optional": true
                   }
                 ]
               },
@@ -38791,6 +39017,76 @@
                 "type": "OCTET STRING",
                 "qualifiers": "(SIZE(1..4))"
               },
+              "optional": true
+            },
+            {
+              "name": "eDRX-Cycle-Length-List",
+              "tag": 52,
+              "implicit": true,
+              "type": "SEQUENCE",
+              "qualifiers": "(SIZE(1..8))",
+              "ofElement": {
+                "type": "SEQUENCE",
+                "elements": [
+                  {
+                    "name": "rat-Type",
+                    "tag": 0,
+                    "implicit": true,
+                    "type": "ENUMERATED",
+                    "values": [
+                      {
+                        "name": "utran",
+                        "value": 0
+                      },
+                      {
+                        "name": "geran",
+                        "value": 1
+                      },
+                      {
+                        "name": "gan",
+                        "value": 2
+                      },
+                      {
+                        "name": "i-hspa-evolution",
+                        "value": 3
+                      },
+                      {
+                        "name": "e-utran",
+                        "value": 4
+                      },
+                      {
+                        "name": "nb-iot",
+                        "value": 5
+                      }
+                    ]
+                  },
+                  {
+                    "name": "eDRX-Cycle-Length-Value",
+                    "tag": 1,
+                    "implicit": true,
+                    "type": "OCTET STRING",
+                    "qualifiers": "(SIZE(1))"
+                  }
+                ]
+              },
+              "optional": true
+            },
+            {
+              "name": "ext-AccessRestrictionData",
+              "tag": 53,
+              "implicit": true,
+              "type": "BIT STRING",
+              "qualifiers": "(SIZE(1..32))",
+              "values": [
+                {
+                  "name": "nrAsSecondaryRATNotAllowed",
+                  "value": 0
+                },
+                {
+                  "name": "unlicensedSpectrumAsSecondaryRATNotAllowed",
+                  "value": 1
+                }
+              ],
               "optional": true
             }
           ],
