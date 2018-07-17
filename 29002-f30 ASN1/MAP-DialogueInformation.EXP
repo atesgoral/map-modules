@@ -1,8 +1,8 @@
 --    Expanded ASN1 Module 'MAP-DialogueInformation'     
 --SIEMENS ASN.1 Compiler         R6.31  (Production_6.31)    
---            Date: 2017-03-07 Time: 09:34:54            
+--            Date: 2018-03-27 Time: 13:16:02            
 
-MAP-DialogueInformation{ 0 identified-organization (4) etsi (0) mobileDomain (0) gsm-Network (1) modules (3) map-DialogueInformation (3) version17 (17) }
+MAP-DialogueInformation{ 0 identified-organization (4) etsi (0) mobileDomain (0) gsm-Network (1) modules (3) map-DialogueInformation (3) version18 (18) }
 
 DEFINITIONS
 

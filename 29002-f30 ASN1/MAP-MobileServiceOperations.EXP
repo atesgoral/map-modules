@@ -1,8 +1,8 @@
 --  Expanded ASN1 Module 'MAP-MobileServiceOperations'   
 --SIEMENS ASN.1 Compiler         R6.31  (Production_6.31)    
---            Date: 2017-03-07 Time: 09:35:38            
+--            Date: 2018-03-27 Time: 13:16:43            
 
-MAP-MobileServiceOperations{ 0 identified-organization (4) etsi (0) mobileDomain (0) gsm-Network (1) modules (3) map-MobileServiceOperations (5) version17 (17) }
+MAP-MobileServiceOperations{ 0 identified-organization (4) etsi (0) mobileDomain (0) gsm-Network (1) modules (3) map-MobileServiceOperations (5) version18 (18) }
 
 DEFINITIONS
 
@@ -558,13 +558,16 @@ updateGprsLocation OPERATION  ::=  {
             pcscf-Restoration  (35 ), 
             dedicatedCoreNetworks  (36 ), 
             non-IP-PDN-Type-APNs  (37 ), 
-            non-IP-PDP-Type-APNs  (38 )} ( SIZE( 26 .. 40 ) ) OPTIONAL, 
+            non-IP-PDP-Type-APNs  (38 ), 
+            nrAsSecondaryRAT  (39 )} ( SIZE( 26 .. 40 ) ) OPTIONAL, 
          t-adsDataRetrieval                                   [10] IMPLICIT NULL OPTIONAL, 
          homogeneousSupportOfIMSVoiceOverPSSessions           [11] IMPLICIT BOOLEAN OPTIONAL, 
          cancellationTypeInitialAttach                        [12] IMPLICIT NULL OPTIONAL, 
          msisdn-lessOperation-Supported                       [14] IMPLICIT NULL OPTIONAL, 
          updateofHomogeneousSupportOfIMSVoiceOverPSSessions   [15] IMPLICIT NULL OPTIONAL, 
-         reset-ids-Supported                                  [16] IMPLICIT NULL OPTIONAL} OPTIONAL, 
+         reset-ids-Supported                                  [16] IMPLICIT NULL OPTIONAL, 
+         ext-SupportedFeatures                                [17] IMPLICIT BIT STRING {
+            unlicensedSpectrumAsSecondaryRAT  (0 )} ( SIZE( 1 .. 40 ) ) OPTIONAL} OPTIONAL, 
       informPreviousNetworkEntity      [1] IMPLICIT NULL OPTIONAL, 
       ps-LCS-NotSupportedByUE          [2] IMPLICIT NULL OPTIONAL, 
       v-gmlc-Address                   [3] IMPLICIT OCTET STRING ( SIZE( 5 .. 17 ) ) OPTIONAL, 
@@ -6354,9 +6357,9 @@ insertSubscriberData OPERATION  ::=  {
                ext-pdp-Type                     [6] IMPLICIT OCTET STRING ( SIZE( 2 ) ) OPTIONAL, 
                ext-pdp-Address                  [7] IMPLICIT OCTET STRING ( SIZE( 1 .. 16 ) ) OPTIONAL, 
                ambr                             [10] IMPLICIT SEQUENCE {
-                  max-RequestedBandwidth-UL   [0] IMPLICIT INTEGER, 
-                  max-RequestedBandwidth-DL   [1] IMPLICIT INTEGER, 
-                  extensionContainer          [2] IMPLICIT SEQUENCE {
+                  max-RequestedBandwidth-UL            [0] IMPLICIT INTEGER, 
+                  max-RequestedBandwidth-DL            [1] IMPLICIT INTEGER, 
+                  extensionContainer                   [2] IMPLICIT SEQUENCE {
                      privateExtensionList   [0] IMPLICIT SEQUENCE  ( SIZE( 1 .. 10 ) ) OF
                         SEQUENCE {
                            extId      MAP-EXTENSION .&extensionId  ( {
@@ -6368,7 +6371,9 @@ insertSubscriberData OPERATION  ::=  {
                      pcs-Extensions         [1] IMPLICIT SEQUENCE {
                         ... } OPTIONAL, 
                      ... } OPTIONAL, 
-                  ... } OPTIONAL, 
+                  ... , 
+                  extended-Max-RequestedBandwidth-UL   [3] IMPLICIT INTEGER OPTIONAL, 
+                  extended-Max-RequestedBandwidth-DL   [4] IMPLICIT INTEGER OPTIONAL} OPTIONAL, 
                sipto-Permission                 [8] IMPLICIT ENUMERATED {
                   siptoAboveRanAllowed       ( 0 ), 
                   siptoAboveRanNotAllowed    ( 1 ) } OPTIONAL, 
@@ -6948,9 +6953,9 @@ insertSubscriberData OPERATION  ::=  {
          apn-oi-Replacement         [0] IMPLICIT OCTET STRING ( SIZE( 9 .. 100 ) ) OPTIONAL, 
          rfsp-id                    [2] IMPLICIT INTEGER ( 1 .. 256 ) OPTIONAL, 
          ambr                       [3] IMPLICIT SEQUENCE {
-            max-RequestedBandwidth-UL   [0] IMPLICIT INTEGER, 
-            max-RequestedBandwidth-DL   [1] IMPLICIT INTEGER, 
-            extensionContainer          [2] IMPLICIT SEQUENCE {
+            max-RequestedBandwidth-UL            [0] IMPLICIT INTEGER, 
+            max-RequestedBandwidth-DL            [1] IMPLICIT INTEGER, 
+            extensionContainer                   [2] IMPLICIT SEQUENCE {
                privateExtensionList   [0] IMPLICIT SEQUENCE  ( SIZE( 1 .. 10 ) ) OF
                   SEQUENCE {
                      extId      MAP-EXTENSION .&extensionId  ( {
@@ -6962,7 +6967,9 @@ insertSubscriberData OPERATION  ::=  {
                pcs-Extensions         [1] IMPLICIT SEQUENCE {
                   ... } OPTIONAL, 
                ... } OPTIONAL, 
-            ... } OPTIONAL, 
+            ... , 
+            extended-Max-RequestedBandwidth-UL   [3] IMPLICIT INTEGER OPTIONAL, 
+            extended-Max-RequestedBandwidth-DL   [4] IMPLICIT INTEGER OPTIONAL} OPTIONAL, 
          apn-ConfigurationProfile   [4] IMPLICIT SEQUENCE {
             defaultContext             INTEGER ( 1 .. 50 ), 
             completeDataListIncluded   NULL OPTIONAL, 
@@ -7027,9 +7034,9 @@ insertSubscriberData OPERATION  ::=  {
                   vplmnAddressAllowed              [7] IMPLICIT NULL OPTIONAL, 
                   chargingCharacteristics          [8] IMPLICIT OCTET STRING ( SIZE( 2 ) ) OPTIONAL, 
                   ambr                             [9] IMPLICIT SEQUENCE {
-                     max-RequestedBandwidth-UL   [0] IMPLICIT INTEGER, 
-                     max-RequestedBandwidth-DL   [1] IMPLICIT INTEGER, 
-                     extensionContainer          [2] IMPLICIT SEQUENCE {
+                     max-RequestedBandwidth-UL            [0] IMPLICIT INTEGER, 
+                     max-RequestedBandwidth-DL            [1] IMPLICIT INTEGER, 
+                     extensionContainer                   [2] IMPLICIT SEQUENCE {
                         privateExtensionList   [0] IMPLICIT SEQUENCE  ( SIZE( 1 .. 10 ) ) OF
                            SEQUENCE {
                               extId      MAP-EXTENSION .&extensionId  ( {
@@ -7041,7 +7048,9 @@ insertSubscriberData OPERATION  ::=  {
                         pcs-Extensions         [1] IMPLICIT SEQUENCE {
                            ... } OPTIONAL, 
                         ... } OPTIONAL, 
-                     ... } OPTIONAL, 
+                     ... , 
+                     extended-Max-RequestedBandwidth-UL   [3] IMPLICIT INTEGER OPTIONAL, 
+                     extended-Max-RequestedBandwidth-DL   [4] IMPLICIT INTEGER OPTIONAL} OPTIONAL, 
                   specificAPNInfoList              [10] IMPLICIT SEQUENCE  ( SIZE( 1 .. 50 ) ) OF
                      SEQUENCE {
                         apn                  [0] IMPLICIT OCTET STRING ( SIZE( 2 .. 63 ) ), 
@@ -7215,8 +7224,8 @@ insertSubscriberData OPERATION  ::=  {
       pcscf-Restoration-Request                        [45] IMPLICIT NULL OPTIONAL, 
       adjacentAccessRestrictionDataList                [46] IMPLICIT SEQUENCE  ( SIZE( 1 .. 50 ) ) OF
          SEQUENCE {
-            plmnId                  [0] IMPLICIT OCTET STRING ( SIZE( 3 ) ), 
-            accessRestrictionData   [1] IMPLICIT BIT STRING {
+            plmnId                      [0] IMPLICIT OCTET STRING ( SIZE( 3 ) ), 
+            accessRestrictionData       [1] IMPLICIT BIT STRING {
                utranNotAllowed  (0 ), 
                geranNotAllowed  (1 ), 
                ganNotAllowed  (2 ), 
@@ -7225,7 +7234,10 @@ insertSubscriberData OPERATION  ::=  {
                ho-toNon3GPP-AccessNotAllowed  (5 ), 
                nb-iotNotAllowed  (6 ), 
                enhancedCoverageNotAllowed  (7 )} ( SIZE( 2 .. 8 ) ), 
-            ... } OPTIONAL, 
+            ... , 
+            ext-AccessRestrictionData   [2] IMPLICIT BIT STRING {
+               nrAsSecondaryRATNotAllowed  (0 ), 
+               unlicensedSpectrumAsSecondaryRATNotAllowed  (1 )} ( SIZE( 1 .. 32 ) ) OPTIONAL} OPTIONAL, 
       imsi-Group-Id-List                               [47] IMPLICIT SEQUENCE  ( SIZE( 1 .. 50 ) ) OF
          SEQUENCE {
             group-Service-Id   [0] IMPLICIT INTEGER ( 0 .. 4294967295 ), 
@@ -7236,7 +7248,22 @@ insertSubscriberData OPERATION  ::=  {
       userPlaneIntegrityProtectionIndicator            [49] IMPLICIT NULL OPTIONAL, 
       dl-Buffering-Suggested-Packet-Count              [50] IMPLICIT INTEGER ( -1 .. 2147483647 ) OPTIONAL, 
       reset-Id-List                                    [51] IMPLICIT SEQUENCE  ( SIZE( 1 .. 50 ) ) OF
-         OCTET STRING ( SIZE( 1 .. 4 ) ) OPTIONAL}
+         OCTET STRING ( SIZE( 1 .. 4 ) ) OPTIONAL, 
+      eDRX-Cycle-Length-List                           [52] IMPLICIT SEQUENCE  ( SIZE( 1 .. 8 ) ) OF
+         SEQUENCE {
+            rat-Type                  [0] IMPLICIT ENUMERATED {
+               utran               ( 0 ), 
+               geran               ( 1 ), 
+               gan                 ( 2 ), 
+               i-hspa-evolution    ( 3 ), 
+               e-utran             ( 4 ), 
+               ... , 
+               nb-iot              ( 5 ) }, 
+            eDRX-Cycle-Length-Value   [1] IMPLICIT OCTET STRING ( SIZE( 1 ) ), 
+            ... } OPTIONAL, 
+      ext-AccessRestrictionData                        [53] IMPLICIT BIT STRING {
+         nrAsSecondaryRATNotAllowed  (0 ), 
+         unlicensedSpectrumAsSecondaryRATNotAllowed  (1 )} ( SIZE( 1 .. 32 ) ) OPTIONAL}
    RESULT     SEQUENCE {
       teleserviceList                [1] IMPLICIT SEQUENCE  ( SIZE( 1 .. 20 ) ) OF
          OCTET STRING ( SIZE( 1 .. 5 ) ) OPTIONAL, 
@@ -7344,7 +7371,10 @@ insertSubscriberData OPERATION  ::=  {
          pcscf-Restoration  (35 ), 
          dedicatedCoreNetworks  (36 ), 
          non-IP-PDN-Type-APNs  (37 ), 
-         non-IP-PDP-Type-APNs  (38 )} ( SIZE( 26 .. 40 ) ) OPTIONAL}
+         non-IP-PDP-Type-APNs  (38 ), 
+         nrAsSecondaryRAT  (39 )} ( SIZE( 26 .. 40 ) ) OPTIONAL, 
+      ext-SupportedFeatures          [10] IMPLICIT BIT STRING {
+         unlicensedSpectrumAsSecondaryRAT  (0 )} ( SIZE( 1 .. 40 ) ) OPTIONAL}
    ERRORS     {
       dataMissing | 
       unexpectedDataValue | 
@@ -8153,9 +8183,9 @@ reset      OPERATION  ::=  {
                   ext-pdp-Type                     [6] IMPLICIT OCTET STRING ( SIZE( 2 ) ) OPTIONAL, 
                   ext-pdp-Address                  [7] IMPLICIT OCTET STRING ( SIZE( 1 .. 16 ) ) OPTIONAL, 
                   ambr                             [10] IMPLICIT SEQUENCE {
-                     max-RequestedBandwidth-UL   [0] IMPLICIT INTEGER, 
-                     max-RequestedBandwidth-DL   [1] IMPLICIT INTEGER, 
-                     extensionContainer          [2] IMPLICIT SEQUENCE {
+                     max-RequestedBandwidth-UL            [0] IMPLICIT INTEGER, 
+                     max-RequestedBandwidth-DL            [1] IMPLICIT INTEGER, 
+                     extensionContainer                   [2] IMPLICIT SEQUENCE {
                         privateExtensionList   [0] IMPLICIT SEQUENCE  ( SIZE( 1 .. 10 ) ) OF
                            SEQUENCE {
                               extId      MAP-EXTENSION .&extensionId  ( {
@@ -8167,7 +8197,9 @@ reset      OPERATION  ::=  {
                         pcs-Extensions         [1] IMPLICIT SEQUENCE {
                            ... } OPTIONAL, 
                         ... } OPTIONAL, 
-                     ... } OPTIONAL, 
+                     ... , 
+                     extended-Max-RequestedBandwidth-UL   [3] IMPLICIT INTEGER OPTIONAL, 
+                     extended-Max-RequestedBandwidth-DL   [4] IMPLICIT INTEGER OPTIONAL} OPTIONAL, 
                   sipto-Permission                 [8] IMPLICIT ENUMERATED {
                      siptoAboveRanAllowed       ( 0 ), 
                      siptoAboveRanNotAllowed    ( 1 ) } OPTIONAL, 
@@ -8747,9 +8779,9 @@ reset      OPERATION  ::=  {
             apn-oi-Replacement         [0] IMPLICIT OCTET STRING ( SIZE( 9 .. 100 ) ) OPTIONAL, 
             rfsp-id                    [2] IMPLICIT INTEGER ( 1 .. 256 ) OPTIONAL, 
             ambr                       [3] IMPLICIT SEQUENCE {
-               max-RequestedBandwidth-UL   [0] IMPLICIT INTEGER, 
-               max-RequestedBandwidth-DL   [1] IMPLICIT INTEGER, 
-               extensionContainer          [2] IMPLICIT SEQUENCE {
+               max-RequestedBandwidth-UL            [0] IMPLICIT INTEGER, 
+               max-RequestedBandwidth-DL            [1] IMPLICIT INTEGER, 
+               extensionContainer                   [2] IMPLICIT SEQUENCE {
                   privateExtensionList   [0] IMPLICIT SEQUENCE  ( SIZE( 1 .. 10 ) ) OF
                      SEQUENCE {
                         extId      MAP-EXTENSION .&extensionId  ( {
@@ -8761,7 +8793,9 @@ reset      OPERATION  ::=  {
                   pcs-Extensions         [1] IMPLICIT SEQUENCE {
                      ... } OPTIONAL, 
                   ... } OPTIONAL, 
-               ... } OPTIONAL, 
+               ... , 
+               extended-Max-RequestedBandwidth-UL   [3] IMPLICIT INTEGER OPTIONAL, 
+               extended-Max-RequestedBandwidth-DL   [4] IMPLICIT INTEGER OPTIONAL} OPTIONAL, 
             apn-ConfigurationProfile   [4] IMPLICIT SEQUENCE {
                defaultContext             INTEGER ( 1 .. 50 ), 
                completeDataListIncluded   NULL OPTIONAL, 
@@ -8826,9 +8860,9 @@ reset      OPERATION  ::=  {
                      vplmnAddressAllowed              [7] IMPLICIT NULL OPTIONAL, 
                      chargingCharacteristics          [8] IMPLICIT OCTET STRING ( SIZE( 2 ) ) OPTIONAL, 
                      ambr                             [9] IMPLICIT SEQUENCE {
-                        max-RequestedBandwidth-UL   [0] IMPLICIT INTEGER, 
-                        max-RequestedBandwidth-DL   [1] IMPLICIT INTEGER, 
-                        extensionContainer          [2] IMPLICIT SEQUENCE {
+                        max-RequestedBandwidth-UL            [0] IMPLICIT INTEGER, 
+                        max-RequestedBandwidth-DL            [1] IMPLICIT INTEGER, 
+                        extensionContainer                   [2] IMPLICIT SEQUENCE {
                            privateExtensionList   [0] IMPLICIT SEQUENCE  ( SIZE( 1 .. 10 ) ) OF
                               SEQUENCE {
                                  extId      MAP-EXTENSION .&extensionId  ( {
@@ -8840,7 +8874,9 @@ reset      OPERATION  ::=  {
                            pcs-Extensions         [1] IMPLICIT SEQUENCE {
                               ... } OPTIONAL, 
                            ... } OPTIONAL, 
-                        ... } OPTIONAL, 
+                        ... , 
+                        extended-Max-RequestedBandwidth-UL   [3] IMPLICIT INTEGER OPTIONAL, 
+                        extended-Max-RequestedBandwidth-DL   [4] IMPLICIT INTEGER OPTIONAL} OPTIONAL, 
                      specificAPNInfoList              [10] IMPLICIT SEQUENCE  ( SIZE( 1 .. 50 ) ) OF
                         SEQUENCE {
                            apn                  [0] IMPLICIT OCTET STRING ( SIZE( 2 .. 63 ) ), 
@@ -9014,8 +9050,8 @@ reset      OPERATION  ::=  {
          pcscf-Restoration-Request                        [45] IMPLICIT NULL OPTIONAL, 
          adjacentAccessRestrictionDataList                [46] IMPLICIT SEQUENCE  ( SIZE( 1 .. 50 ) ) OF
             SEQUENCE {
-               plmnId                  [0] IMPLICIT OCTET STRING ( SIZE( 3 ) ), 
-               accessRestrictionData   [1] IMPLICIT BIT STRING {
+               plmnId                      [0] IMPLICIT OCTET STRING ( SIZE( 3 ) ), 
+               accessRestrictionData       [1] IMPLICIT BIT STRING {
                   utranNotAllowed  (0 ), 
                   geranNotAllowed  (1 ), 
                   ganNotAllowed  (2 ), 
@@ -9024,7 +9060,10 @@ reset      OPERATION  ::=  {
                   ho-toNon3GPP-AccessNotAllowed  (5 ), 
                   nb-iotNotAllowed  (6 ), 
                   enhancedCoverageNotAllowed  (7 )} ( SIZE( 2 .. 8 ) ), 
-               ... } OPTIONAL, 
+               ... , 
+               ext-AccessRestrictionData   [2] IMPLICIT BIT STRING {
+                  nrAsSecondaryRATNotAllowed  (0 ), 
+                  unlicensedSpectrumAsSecondaryRATNotAllowed  (1 )} ( SIZE( 1 .. 32 ) ) OPTIONAL} OPTIONAL, 
          imsi-Group-Id-List                               [47] IMPLICIT SEQUENCE  ( SIZE( 1 .. 50 ) ) OF
             SEQUENCE {
                group-Service-Id   [0] IMPLICIT INTEGER ( 0 .. 4294967295 ), 
@@ -9035,7 +9074,22 @@ reset      OPERATION  ::=  {
          userPlaneIntegrityProtectionIndicator            [49] IMPLICIT NULL OPTIONAL, 
          dl-Buffering-Suggested-Packet-Count              [50] IMPLICIT INTEGER ( -1 .. 2147483647 ) OPTIONAL, 
          reset-Id-List                                    [51] IMPLICIT SEQUENCE  ( SIZE( 1 .. 50 ) ) OF
-            OCTET STRING ( SIZE( 1 .. 4 ) ) OPTIONAL} OPTIONAL, 
+            OCTET STRING ( SIZE( 1 .. 4 ) ) OPTIONAL, 
+         eDRX-Cycle-Length-List                           [52] IMPLICIT SEQUENCE  ( SIZE( 1 .. 8 ) ) OF
+            SEQUENCE {
+               rat-Type                  [0] IMPLICIT ENUMERATED {
+                  utran               ( 0 ), 
+                  geran               ( 1 ), 
+                  gan                 ( 2 ), 
+                  i-hspa-evolution    ( 3 ), 
+                  e-utran             ( 4 ), 
+                  ... , 
+                  nb-iot              ( 5 ) }, 
+               eDRX-Cycle-Length-Value   [1] IMPLICIT OCTET STRING ( SIZE( 1 ) ), 
+               ... } OPTIONAL, 
+         ext-AccessRestrictionData                        [53] IMPLICIT BIT STRING {
+            nrAsSecondaryRATNotAllowed  (0 ), 
+            unlicensedSpectrumAsSecondaryRATNotAllowed  (1 )} ( SIZE( 1 .. 32 ) ) OPTIONAL} OPTIONAL, 
       subscriptionDataDeletion   [3] IMPLICIT SEQUENCE {
          imsi                                              [0] IMPLICIT OCTET STRING ( SIZE( 3 .. 8 ) ), 
          basicServiceList                                  [1] IMPLICIT SEQUENCE  ( SIZE( 1 .. 70 ) ) OF

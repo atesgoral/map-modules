@@ -1,8 +1,8 @@
 --Expanded ASN1 Module 'MAP-ShortMessageServiceOperations'
 --SIEMENS ASN.1 Compiler         R6.31  (Production_6.31)    
---            Date: 2017-03-07 Time: 09:36:00            
+--            Date: 2018-03-27 Time: 13:17:02            
 
-MAP-ShortMessageServiceOperations{ 0 identified-organization (4) etsi (0) mobileDomain (0) gsm-Network (1) modules (3) map-ShortMessageServiceOperations (9) version17 (17) }
+MAP-ShortMessageServiceOperations{ 0 identified-organization (4) etsi (0) mobileDomain (0) gsm-Network (1) modules (3) map-ShortMessageServiceOperations (9) version18 (18) }
 
 DEFINITIONS
 
