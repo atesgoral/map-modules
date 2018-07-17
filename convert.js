@@ -17,9 +17,9 @@ fileRead
     const parsed = asn1exp.parse(s);
 
     if (argv.min) {
-      console.log(JSON.stringify(parsed.operations));
+      console.log(JSON.stringify(parsed.blocks));
     } else {
-      console.log(JSON.stringify(parsed.operations, null, 2));
+      console.log(JSON.stringify(parsed.blocks, null, 2));
     }
   })
   .catch((error) => {

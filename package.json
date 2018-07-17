@@ -14,13 +14,15 @@
   "main": "convert.js",
   "dependencies": {},
   "devDependencies": {
-    "asn1exp": "0.0.2",
+    "asn1exp": "0.1.1",
     "get-stdin": "^5.0.1",
     "minimist": "^1.2.0"
   },
   "scripts": {
     "convert": "cd 29002-f30\\ ASN1 && for file in *Operations.EXP; do node ../convert \"$file\" > \"../dist/$file.json\" ; done",
-    "convert-min": "cd 29002-f30\\ ASN1 && for file in *Operations.EXP; do node ../convert \"$file\" --min > \"../dist/$file.min.json\" ; done"
+    "convert-min": "cd 29002-f30\\ ASN1 && for file in *Operations.EXP; do node ../convert \"$file\" --min > \"../dist/$file.min.json\" ; done",
+    "convert-errors": "cd 29002-f30\\ ASN1 && for file in *Errors.EXP; do node ../convert \"$file\" > \"../dist/$file.json\" ; done",
+    "convert-errors-min": "cd 29002-f30\\ ASN1 && for file in *Errors.EXP; do node ../convert \"$file\" --min > \"../dist/$file.min.json\" ; done"
   },
   "repository": {
     "type": "git",
